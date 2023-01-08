@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RatingsController;
 
 Auth::routes(['register' => false, 'verify' => true, 'reset' => true]);
-Route::redirect('/', '/clearprop/public/index.php/login'); /* FFORNO 02/01/2022: edited redirect */
+Route::redirect('/', env('APP_ROOT') . 'index.php/login'); /* FFORNO 08/01/2022: edited redirect */
 Route::redirect('/pilot', '/home');
 Route::get('/home', function () {
     return redirect()->route('app.home');
