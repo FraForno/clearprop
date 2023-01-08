@@ -1,7 +1,7 @@
 <div class="login-logo">
     <div class="login-logo">
         <a href="{{ route('app.home') }}">
-            <img src="{{ url('/images/ClearProp_textdown.svg') }}" alt="ClearProp Logo" width="150" height="auto"/>
+            <img src="{{ url('../images/astralogo.png') }}" alt="ClearProp Logo" width="150" height="auto"/>
         </a>
     </div>
 </div>
