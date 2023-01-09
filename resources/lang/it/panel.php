@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'ClearProp',
+    'site_title' => 'ClearProp Astra',
 ];
