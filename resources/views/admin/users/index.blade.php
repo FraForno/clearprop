@@ -72,7 +72,7 @@
                                             {{ trans('cruds.user.fields.email') }}
                                         </th>
                                         <th>
-                                            {{ trans('cruds.user.fields.lang') }}
+                                            {{ trans('cruds.role.title_singular') }}
                                         </th>
                                         <th>
                                             {{ trans('cruds.user.fields.factor') }}
@@ -140,7 +140,7 @@
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
-                    {data: 'lang', name: 'lang'},
+                    {data: 'roles', name: 'roles'},
                     {data: 'factor_name', name: 'factor.name'},
                     {data: 'actions', name: '{{ trans('global.actions') }}'}
                 ],

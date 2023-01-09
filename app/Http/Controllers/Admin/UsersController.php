@@ -26,7 +26,8 @@ class UsersController extends Controller
                 ->select(sprintf('%s.*', (new User)->table));
             //debug($query);
             $table = Datatables::of($query);
-
+			
+			$table->addColumn('roles', '&nbsp;');
             $table->addColumn('placeholder', '&nbsp;');
             $table->addColumn('actions', '&nbsp;');
             $table->editColumn('actions', function ($row) {
@@ -45,6 +46,16 @@ class UsersController extends Controller
             });
             $table->editColumn('lang', function ($row) {
                 return $row->lang ? User::LANG_SELECT[strtolower($row->lang)] : '';
+            });
+			
+			$table->editColumn('roles', function ($row) {
+				$roles = User::withoutTrashed()->select('roles.title')->where('users.id', '=', $row->id)->join('role_user', 'users.id', '=', 'role_user.user_id')->join('roles', 'role_user.role_id', '=', 'roles.id')->get();
+				
+				$titles = '';
+				foreach ($roles as $role)
+					strlen($titles) > 0 ? $titles = $titles . ', ' . json_decode($role, true)['title'] : $titles = json_decode($role, true)['title'];
+				
+				return $titles;
             });
 
             $table->addColumn('factor_name', function ($row) {
