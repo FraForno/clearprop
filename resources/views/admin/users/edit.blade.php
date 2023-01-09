@@ -190,6 +190,16 @@
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.roles_helper') }}</span>
                         </div>
+						<div class="form-group">
+                            <label for="notes">{{ trans('cruds.user.fields.notes') }}</label>
+                            <textarea class="form-control {{ $errors->has('notes') ? 'is-invalid' : '' }}" rows="10" cols="50"
+                                   name="notes"
+                                   id="notes">{{ old('notes', $user->notes) }}</textarea>
+                            @if($errors->has('notes'))
+                                <span class="text-danger">{{ $errors->first('notes') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.notes_helper') }}</span>
+                        </div>
                         {{--            <div class="form-group">--}}
                         {{--                <div class="form-check {{ $errors->has('instructor') ? 'is-invalid' : '' }}">--}}
                         {{--                    <input type="hidden" name="instructor" value="0">--}}

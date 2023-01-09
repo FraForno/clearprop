@@ -131,6 +131,8 @@ return [
             'privacy' => 'Agree to terms and conditions',
             'plane' => 'Ratings',
             'plane_helper' => '',
+			'notes' => 'Notes',
+			'notes_helper' => '',
         ],
     ],
     'plane' => [

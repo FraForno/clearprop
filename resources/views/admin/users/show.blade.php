@@ -166,6 +166,14 @@
                                         {{ $user->email_verified_at }}
                                     </td>
                                 </tr>
+								<tr>
+                                    <th>
+                                        {{ trans('cruds.user.fields.notes') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->notes }}
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

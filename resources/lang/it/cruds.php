@@ -131,6 +131,8 @@ return [
             'privacy' => 'Acconsento il trattamento dei miei dati personali',
             'plane' => 'Ratings',
             'plane_helper' => '',
+			'notes' => 'Note',
+			'notes_helper' => '',
         ],
     ],
     'plane' => [
