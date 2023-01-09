@@ -176,6 +176,41 @@ class UsersController extends Controller
         }
         return false;
     }
+	
+	public function getContactUsers(Request $request)
+    {
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        if ($request->ajax()) {
+            try {
+                $query = User::withoutTrashed()->select(sprintf('%s.*', (new User)->table))->join('role_user', 'users.id', '=', 'role_user.user_id')->where('role_user.role_id', '=', 6);
+
+                $table = Datatables::of($query);
+
+                $table->addColumn('placeholder', '&nbsp;');
+                $table->addColumn('actions', '&nbsp;');
+                $table->editColumn('actions', function ($row) {
+                    $undeleteGate = 'user_undelete';
+                    $crudRoutePart = 'users';
+
+                    return view('partials.datatablesAdminCustomActions', compact(
+                        'undeleteGate',
+                        'crudRoutePart',
+                        'row'
+                    ));
+                });
+                $table->rawColumns(['actions', 'placeholder', 'user']);
+
+                $table->orderColumn('name', 'name $1')->toJson();
+
+                return $table->make(true);
+            } catch (\Throwable $exception) {
+                report($exception);
+                return back()->withToastError($exception->getMessage());
+            }
+        }
+        return false;
+    }
 
     public function undelete($user_id)
     {

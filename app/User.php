@@ -87,6 +87,11 @@ class User extends Authenticatable // implements MustVerifyEmail
     {
         return $this->roles()->where('id', 5)->exists();
     }
+	
+	public function getIsContactAttribute()
+    {
+        return $this->roles()->where('id', 6)->exists();
+    }
 
     public function userActivities()
     {

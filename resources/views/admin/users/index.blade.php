@@ -33,13 +33,19 @@
                             <a class="nav-link active show" href="#active_users" role="tab" aria-controls="active_users"
                                data-toggle="pill"
                                aria-selected="true">
-                                Active
+                                Attivi
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#deleted_users" role="tab" aria-controls="deleted_users"
                                data-toggle="pill" aria-selected="false">
-                                Inactive
+                                Disattivati
+                            </a>
+                        </li>
+						<li class="nav-item">
+                            <a class="nav-link" href="#contact_users" role="tab" aria-controls="contact_users"
+                               data-toggle="pill" aria-selected="false">
+                                Contatti
                             </a>
                         </li>
                     </ul>
@@ -81,6 +87,9 @@
                         </div>
                         <div class="tab-pane" role="tabpanel" id="deleted_users" aria-labelledby="deleted_users">
                             @includeIf('admin.users.relationships.deletedUsers')
+                        </div>
+						<div class="tab-pane" role="tabpanel" id="contact_users" aria-labelledby="contact_users">
+                            @includeIf('admin.users.relationships.contactUsers')
                         </div>
                     </div>
                 </div>
