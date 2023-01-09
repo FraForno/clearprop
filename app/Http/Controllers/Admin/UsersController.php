@@ -201,15 +201,19 @@ class UsersController extends Controller
                 $table->addColumn('placeholder', '&nbsp;');
                 $table->addColumn('actions', '&nbsp;');
                 $table->editColumn('actions', function ($row) {
-                    $undeleteGate = 'user_undelete';
-                    $crudRoutePart = 'users';
+					$viewGate = 'user_show';
+					$editGate = 'user_edit';
+					$deleteGate = 'user_delete';
+					$crudRoutePart = 'users';
 
-                    return view('partials.datatablesAdminCustomActions', compact(
-                        'undeleteGate',
-                        'crudRoutePart',
-                        'row'
-                    ));
-                });
+					return view('partials.datatablesAdminActions', compact(
+						'viewGate',
+						'editGate',
+						'deleteGate',
+						'crudRoutePart',
+						'row'
+						));
+				});
                 $table->rawColumns(['actions', 'placeholder', 'user']);
 
                 $table->orderColumn('name', 'name $1')->toJson();

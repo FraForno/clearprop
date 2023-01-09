@@ -32,7 +32,7 @@
                 dom: dtDom,
                 buttons: dtButtons,
                 processing: true,
-                serverSide: false,
+                serverSide: true,
                 retrieve: true,
                 aaSorting: [],
                 ajax: "{{ route('admin.users.getContactUsers') }}",
