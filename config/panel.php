@@ -3,10 +3,10 @@
 return [
     'date_format' => 'd/m/Y',
     'time_format' => 'H:i',
-    'primary_language' => 'en',
+    'primary_language' => 'it',
     'available_languages' => [
         'en' => 'English',
 //        'de' => 'German',
-        'it' => 'Italian',
+        'it' => 'Italiano',
     ],
 ];

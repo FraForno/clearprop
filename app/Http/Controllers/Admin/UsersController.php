@@ -44,7 +44,7 @@ class UsersController extends Controller
                 ));
             });
             $table->editColumn('lang', function ($row) {
-                return $row->lang ? User::LANG_SELECT[strtoupper($row->lang)] : '';
+                return $row->lang ? User::LANG_SELECT[strtolower($row->lang)] : '';
             });
 
             $table->addColumn('factor_name', function ($row) {

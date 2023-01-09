@@ -21,10 +21,11 @@ class User extends Authenticatable // implements MustVerifyEmail
     const IS_MANAGER = 3;
     const IS_INSTRUCTOR = 4;
     const IS_MECHANIC = 5;
+	const IS_CONTACT = 6;
     const LANG_SELECT = [
-        'EN' => 'English',
-        'DE' => 'German',
-        'IT' => 'Italian',
+        'en' => 'English',
+      //  'DE' => 'German',
+        'it' => 'Italiano',
     ];
     public $table = 'users';
     protected $hidden = [

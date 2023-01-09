@@ -88,9 +88,9 @@
                                         id="lang" required>
                                     <option value
                                             disabled {{ old('lang', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                                    <option value="EN">English</option>
-                                    <option value="IT">Italian</option>
-                                    <option value="DE">German</option>
+                                    <option value="en">English</option>
+                                    <option value="it">Italian</option>
+                                    <option value="de">German</option>
                                 </select>
                             </div>
                             <div class="row">
