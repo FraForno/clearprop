@@ -23,7 +23,7 @@
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.name_helper') }}</span>
                         </div>
-						div class="form-group">
+						<div class="form-group">
                             <label class="required" for="surname">{{ trans('cruds.user.fields.surname') }}</label>
                             <input class="form-control {{ $errors->has('surname') ? 'is-invalid' : '' }}" type="text"
                                    name="surname"
