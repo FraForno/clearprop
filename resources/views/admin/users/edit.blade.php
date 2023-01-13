@@ -36,10 +36,10 @@
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.surname_helper') }}</span>
                         </div>
 						<div class="form-group">
-                            <label class="required" for="birthplace">{{ trans('cruds.user.fields.birthplace') }}</label>
+                            <label for="birthplace">{{ trans('cruds.user.fields.birthplace') }}</label>
                             <input class="form-control {{ $errors->has('birthplace') ? 'is-invalid' : '' }}" type="text"
                                    name="birthplace"
-                                   id="birthplace" value="{{ old('birthplace', $user->birthplace) }}" required>
+                                   id="birthplace" value="{{ old('birthplace', $user->birthplace) }}">
                             @if($errors->has('birthplace'))
                                 <span class="text-danger">{{ $errors->first('birthplace') }}</span>
                             @endif
@@ -73,7 +73,7 @@
                             @if($errors->has('password'))
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                             @endif
-                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.password_helper') }}</span>
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.password_edit_helper') }}</span>
                         </div>
                         <div class="form-group">
                             <label class="required">{{ trans('cruds.user.fields.lang') }}</label>

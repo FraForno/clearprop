@@ -53,7 +53,7 @@ class ActivitiesController extends Controller
                 return $row->id ? $row->id : "";
             });
             $table->addColumn('user_name', function ($row) {
-                return $row->user ? $row->user->name : '';
+                return $row->user ? $row->user->surname_name : '';
             });
 
             $table->addColumn('type_name', function ($row) {
@@ -76,7 +76,7 @@ class ActivitiesController extends Controller
             });
 
             $table->editColumn('amount', function ($row) {
-                return $row->amount ? $row->amount : "";
+                return $row->amount ? $row->amount.config('panel.currency_sym') : "";
             });
 
             $table->editColumn('split_color', function ($row) {
@@ -101,15 +101,17 @@ class ActivitiesController extends Controller
     {
         abort_if(Gate::denies('activity_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::all()->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         /** $types = We created a dependend dropdown, so types list is loaded by jquery in TypeController */
 
-        $copilots = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $copilots = User::all()->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $instructors = User::whereHas('roles', function ($role) {
             $role->where('role_id', User::IS_INSTRUCTOR);
-        })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        })->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
+		
+		debug($instructors);
 
         $planes = Plane::all()->pluck('callsign', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -140,15 +142,15 @@ class ActivitiesController extends Controller
     {
         abort_if(Gate::denies('activity_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::all()->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $types = Type::where('active', '=', true)->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $copilots = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $copilots = User::all()->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $instructors = User::whereHas('roles', function ($role) {
             $role->where('role_id', User::IS_INSTRUCTOR);
-        })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        })->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $planes = Plane::all()->pluck('callsign', 'id')->prepend(trans('global.pleaseSelect'), '');
 

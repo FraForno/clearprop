@@ -31,6 +31,7 @@ class User extends Authenticatable // implements MustVerifyEmail
     protected $hidden = [
         'password',
         'remember_token',
+		'surname_name'
     ];
     protected $dates = [
         'created_at',

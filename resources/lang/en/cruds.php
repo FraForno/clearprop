@@ -96,6 +96,7 @@ return [
             'email_verified_at_helper' => '',
             'password' => 'Password',
             'password_helper' => '',
+			'password_edit_helper' => 'Leave empty if no change',
             'roles' => 'Roles',
             'roles_helper' => '',
             'remember_token' => 'Remember Token',

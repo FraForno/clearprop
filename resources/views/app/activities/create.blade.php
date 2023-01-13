@@ -103,7 +103,7 @@
                       </span>
                         </div>
                         <input class="form-control date {{ $errors->has('event') ? 'is-invalid' : '' }}" type="text"
-                               name="event" id="event" value="{{ old('event') }}" required>
+                               name="event" id="event" value="{{ old('event', date_format(now(), config('panel.date_format'))) }}" required>
                         @if($errors->has('event'))
                             <span class="text-danger">{{ $errors->first('event') }}</span>
                         @endif

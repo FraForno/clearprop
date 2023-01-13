@@ -14,7 +14,7 @@
                         {{ trans('cruds.activity.fields.user') }}
                     </th>
                     <td>
-                        {{ $activity->user->name ?? '' }}
+                        {{ $activity->user->surname_name ?? '' }}
                     </td>
                 </tr>
                 <tr>
@@ -30,7 +30,7 @@
                         {{ trans('cruds.activity.fields.copilot') }}
                     </th>
                     <td>
-                        {{ $activity->copilot->name ?? '' }}
+                        {{ $activity->copilot->surname_name ?? '' }}
                     </td>
                 </tr>
 
@@ -39,7 +39,7 @@
                         {{ trans('cruds.activity.fields.instructor') }}
                     </th>
                     <td>
-                        {{ $activity->instructor->name ?? '' }}
+                        {{ $activity->instructor->surname_name ?? '' }}
                     </td>
                 </tr>
                 </tbody>

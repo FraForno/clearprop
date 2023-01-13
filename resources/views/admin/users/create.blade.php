@@ -34,10 +34,10 @@
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.surname_helper') }}</span>
                         </div>
 						<div class="form-group">
-                            <label class="required" for="birthplace">{{ trans('cruds.user.fields.birthplace') }}</label>
+                            <label for="birthplace">{{ trans('cruds.user.fields.birthplace') }}</label>
                             <input class="form-control {{ $errors->has('birthplace') ? 'is-invalid' : '' }}" type="text"
                                    name="birthplace"
-                                   id="birthplace" value="{{ old('birthplace', '') }}" required>
+                                   id="birthplace" value="{{ old('birthplace', '') }}">
                             @if($errors->has('birthplace'))
                                 <span class="text-danger">{{ $errors->first('birthplace') }}</span>
                             @endif
@@ -82,7 +82,7 @@
                                         disabled {{ old('lang', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
                                 @foreach(App\User::LANG_SELECT as $key => $label)
                                     <option
-                                            value="{{ $key }}" {{ old('lang', 'EN') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                                            value="{{ $key }}" {{ old('lang', 'it') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('lang'))
