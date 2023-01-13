@@ -62,13 +62,13 @@
                                         <th>
                                             <i class="fas fa-eye"></i>
                                         </th>
-                                        <th data-priority="1">
+                                        <th>
                                             {{ trans('cruds.user.fields.id') }}
                                         </th>
-										<th class="min-tablet-l">
+										<th data-priority="1">
                                             {{ trans('cruds.user.fields.surname') }}
                                         </th>
-                                        <th>
+                                        <th data-priority="1">
                                             {{ trans('cruds.user.fields.name') }}
                                         </th>
                                         <th>

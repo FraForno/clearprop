@@ -108,12 +108,12 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
-                        {{ strtoupper(app()->getLocale()) }}
+                        {{ strtolower(app()->getLocale()) }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         @foreach(config('panel.available_languages') as $langLocale => $langName)
                             <a class="dropdown-item"
-                               href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
+                               href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtolower($langLocale) }}
                                 ({{ $langName }})</a>
                         @endforeach
                     </div>

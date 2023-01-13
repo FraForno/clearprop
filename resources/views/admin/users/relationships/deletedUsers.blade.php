@@ -5,13 +5,13 @@
             <th>
                 <i class="fas fa-eye"></i>
             </th>
-            <th data-priority="1">
+            <th>
                 {{ trans('cruds.user.fields.id') }}
             </th>
-			<th class="min-tablet-l">
+			<th data-priority="1">
                 {{ trans('cruds.user.fields.surname') }}
             </th>
-            <th>
+            <th data-priority="1">
                 {{ trans('cruds.user.fields.name') }}
             </th>
             <th>
@@ -78,7 +78,7 @@
                     {type: 'date', data: 'deleted_at', name: 'deleted_at'},
                     {data: 'actions', name: '{{ trans('global.actions') }}'}
                 ],
-                order: [[2, 'desc']],
+                order: [[6, 'desc']],
                 pageLength: 25,
             };
             $('.datatable-deleted_users').DataTable(dtOverrideGlobals);
