@@ -8,7 +8,10 @@
             <th data-priority="1">
                 {{ trans('cruds.user.fields.id') }}
             </th>
-            <th class="min-tablet-l">
+			<th class="min-tablet-l">
+                {{ trans('cruds.user.fields.surname') }}
+            </th>
+            <th>
                 {{ trans('cruds.user.fields.name') }}
             </th>
             <th>
@@ -68,6 +71,7 @@
                         "defaultContent": '',
                     },
                     {data: 'id', name: 'id'},
+					{data: 'name', name: 'surname'},
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
                     {type: 'date', data: 'created_at', name: 'created_at'},

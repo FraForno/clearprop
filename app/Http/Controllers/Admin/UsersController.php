@@ -64,7 +64,7 @@ class UsersController extends Controller
 
             $table->rawColumns(['actions', 'placeholder', 'user']);
 
-            $table->orderColumn('name', 'name $1')->toJson();
+            $table->orderColumn('surname', 'surname $1')->toJson();
 
             return $table->make(true);
         }

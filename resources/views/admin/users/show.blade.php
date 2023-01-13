@@ -2,7 +2,7 @@
 @section('content-header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h3 class="m-0 text-dark">{{ $user->name }}</h3>
+            <h3 class="m-0 text-dark">{{ $user->name }} {{ $user->surname }}</h3>
 			<h6 class="m-0 text-dark">{{ trans('global.bornin') }} {{ $user->birthplace }} {{ trans('global.bornon') }} {{ $user->birthdate }}</h6>
             <h6 class="m-0 text-dark">{{ trans('cruds.user.fields.email') }} : {{ $user->email }}</h6>
             <h6 class="m-0 text-dark">{{ trans('cruds.user.fields.id') }} : {{ $user->id }}</h6>
