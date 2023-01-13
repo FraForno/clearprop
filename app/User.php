@@ -39,6 +39,8 @@ class User extends Authenticatable // implements MustVerifyEmail
         'medical_due',
         'email_verified_at',
         'privacy_confirmed_at',
+		'birthdate',
+		'associate_due',
     ];
 
     protected $fillable = [
@@ -62,6 +64,13 @@ class User extends Authenticatable // implements MustVerifyEmail
         'updated_at',
         'deleted_at',
 		'notes',
+		'prov',
+		'zipcode',
+		'birthdate',
+		'birthplace',
+		'phone_3',
+		'fax',
+		'associate_due',
     ];
 
     public function getIsAdminAttribute()
@@ -149,6 +158,26 @@ class User extends Authenticatable // implements MustVerifyEmail
     public function setMedicalDueAttribute($value)
     {
         $this->attributes['medical_due'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+    }
+	
+	public function getBirthdateAttribute($value)
+    {
+        return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
+    }
+
+    public function setBirthdateAttribute($value)
+    {
+        $this->attributes['birthdate'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+    }
+	
+	public function getAssociateDueAttribute($value)
+    {
+        return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
+    }
+
+    public function setAssociateDueAttribute($value)
+    {
+        $this->attributes['associate_due'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     public function getEmailVerifiedAtAttribute($value)

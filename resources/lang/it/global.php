@@ -1,6 +1,8 @@
 <?php
 
 return [
+	'bornin' => 'Nato a',
+	'bornon' => 'il',
     'actions' => 'Azioni',
     'add' => 'Aggiungi',
     'allRightsReserved' => 'Tutti i diritti riservati.',

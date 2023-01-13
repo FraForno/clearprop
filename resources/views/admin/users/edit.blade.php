@@ -25,6 +25,26 @@
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.name_helper') }}</span>
                         </div>
+						<div class="form-group">
+                            <label class="required" for="birthplace">{{ trans('cruds.user.fields.birthplace') }}</label>
+                            <input class="form-control {{ $errors->has('birthplace') ? 'is-invalid' : '' }}" type="text"
+                                   name="birthplace"
+                                   id="birthplace" value="{{ old('birthplace', $user->birthplace) }}" required>
+                            @if($errors->has('birthplace'))
+                                <span class="text-danger">{{ $errors->first('birthplace') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.birthplace_helper') }}</span>
+                        </div>
+						<div class="form-group">
+                            <label for="birthdate">{{ trans('cruds.user.fields.birthdate') }}</label>
+                            <input class="form-control date {{ $errors->has('birthdate') ? 'is-invalid' : '' }}"
+                                   type="text"
+                                   name="birthdate" id="birthdate" value="{{ old('birthdate', $user->birthdate) }}">
+                            @if($errors->has('birthdate'))
+                                <span class="text-danger">{{ $errors->first('birthdate') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.birthdate_helper') }}</span>
+                        </div>
                         <div class="form-group">
                             <label class="required" for="email">{{ trans('cruds.user.fields.email') }}</label>
                             <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
@@ -92,6 +112,26 @@
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.phone_2_helper') }}</span>
                         </div>
+						<div class="form-group">
+                            <label for="phone_3">{{ trans('cruds.user.fields.phone_3') }}</label>
+                            <input class="form-control {{ $errors->has('phone_3') ? 'is-invalid' : '' }}" type="text"
+                                   name="phone_3"
+                                   id="phone_3" value="{{ old('phone_3', $user->phone_3) }}">
+                            @if($errors->has('phone_3'))
+                                <span class="text-danger">{{ $errors->first('phone_3') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.phone_3_helper') }}</span>
+                        </div>
+						<div class="form-group">
+                            <label for="fax">{{ trans('cruds.user.fields.fax') }}</label>
+                            <input class="form-control {{ $errors->has('fax') ? 'is-invalid' : '' }}" type="text"
+                                   name="fax"
+                                   id="fax" value="{{ old('fax', $user->fax) }}">
+                            @if($errors->has('fax'))
+                                <span class="text-danger">{{ $errors->first('fax') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.fax_helper') }}</span>
+                        </div>
                         <div class="form-group">
                             <label for="address">{{ trans('cruds.user.fields.address') }}</label>
                             <input class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" type="text"
@@ -102,6 +142,16 @@
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.address_helper') }}</span>
                         </div>
+						<div class="form-group">
+                            <label for="zipcode">{{ trans('cruds.user.fields.zipcode') }}</label>
+                            <input class="form-control {{ $errors->has('zipcode') ? 'is-invalid' : '' }}" type="text"
+                                   name="zipcode"
+                                   id="zipcode" value="{{ old('zipcode', $user->zipcode) }}">
+                            @if($errors->has('zipcode'))
+                                <span class="text-danger">{{ $errors->first('zipcode') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.zipcode_helper') }}</span>
+                        </div>
                         <div class="form-group">
                             <label for="city">{{ trans('cruds.user.fields.city') }}</label>
                             <input class="form-control {{ $errors->has('city') ? 'is-invalid' : '' }}" type="text"
@@ -111,6 +161,16 @@
                                 <span class="text-danger">{{ $errors->first('city') }}</span>
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.city_helper') }}</span>
+                        </div>
+						<div class="form-group">
+                            <label for="prov">{{ trans('cruds.user.fields.prov') }}</label>
+                            <input class="form-control {{ $errors->has('prov') ? 'is-invalid' : '' }}" type="text"
+                                   name="prov"
+                                   id="prov" value="{{ old('prov', $user->prov) }}">
+                            @if($errors->has('prov'))
+                                <span class="text-danger">{{ $errors->first('prov') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.prov_helper') }}</span>
                         </div>
                         <div class="form-group">
                             <label class="required" for="factor_id">{{ trans('cruds.user.fields.factor') }}</label>
@@ -168,6 +228,16 @@
                                 <span class="text-danger">{{ $errors->first('medical_due') }}</span>
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.medical_due_helper') }}</span>
+                        </div>
+						<div class="form-group">
+                            <label for="associate_due">{{ trans('cruds.user.fields.associate_due') }}</label>
+                            <input class="form-control date {{ $errors->has('associate_due') ? 'is-invalid' : '' }}"
+                                   type="text"
+                                   name="associate_due" id="associate_due" value="{{ old('associate_due', $user->associate_due) }}">
+                            @if($errors->has('associate_due'))
+                                <span class="text-danger">{{ $errors->first('associate_due') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.associate_due_helper') }}</span>
                         </div>
                         <div class="form-group">
                             <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>

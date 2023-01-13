@@ -3,6 +3,7 @@
     <div class="row mb-2">
         <div class="col-sm-6">
             <h3 class="m-0 text-dark">{{ $user->name }}</h3>
+			<h6 class="m-0 text-dark">{{ trans('global.bornin') }} {{ $user->birthplace }} {{ trans('global.bornon') }} {{ $user->birthdate }}</h6>
             <h6 class="m-0 text-dark">{{ trans('cruds.user.fields.email') }} : {{ $user->email }}</h6>
             <h6 class="m-0 text-dark">{{ trans('cruds.user.fields.id') }} : {{ $user->id }}</h6>
         </div>
@@ -98,6 +99,22 @@
                                         {{ $user->phone_2 }}
                                     </td>
                                 </tr>
+								<tr>
+                                    <th>
+                                        {{ trans('cruds.user.fields.phone_3') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->phone_3 }}
+                                    </td>
+                                </tr>
+								<tr>
+                                    <th>
+                                        {{ trans('cruds.user.fields.fax') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->fax }}
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>
                                         {{ trans('cruds.user.fields.address') }}
@@ -106,12 +123,28 @@
                                         {{ $user->address }}
                                     </td>
                                 </tr>
+								<tr>
+                                    <th>
+                                        {{ trans('cruds.user.fields.zipcode') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->zipcode }}
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>
                                         {{ trans('cruds.user.fields.city') }}
                                     </th>
                                     <td>
                                         {{ $user->city }}
+                                    </td>
+                                </tr>
+								<tr>
+                                    <th>
+                                        {{ trans('cruds.user.fields.prov') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->prov }}
                                     </td>
                                 </tr>
                                 <tr>
@@ -148,6 +181,14 @@
                                         {{ $user->medical_due }}
                                     </td>
                                 </tr>
+								<tr>
+                                    <th>
+                                        {{ trans('cruds.user.fields.associate_due') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->associate_due }}
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>
                                         {{ trans('cruds.user.fields.roles') }}
@@ -170,9 +211,7 @@
                                     <th>
                                         {{ trans('cruds.user.fields.notes') }}
                                     </th>
-                                    <td>
-                                        {{ $user->notes }}
-                                    </td>
+                                    <td style="white-space:pre">{{ $user->notes }}</td>
                                 </tr>
                                 </tbody>
                             </table>

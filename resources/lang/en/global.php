@@ -1,6 +1,8 @@
 <?php
 
 return [
+	'bornin' => 'Born in',
+	'bornon' => 'on',
     'actions' => 'Actions',
     'add' => 'Add',
     'allRightsReserved' => 'All rights reserved.',
