@@ -71,7 +71,7 @@
                         "defaultContent": '',
                     },
                     {data: 'id', name: 'id'},
-					{data: 'name', name: 'surname'},
+					{data: 'surname', name: 'surname'},
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
                     {type: 'date', data: 'created_at', name: 'created_at'},

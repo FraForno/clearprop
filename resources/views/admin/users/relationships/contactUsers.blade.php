@@ -65,7 +65,7 @@
                         "defaultContent": '',
                     },
                     {data: 'id', name: 'id'},
-					{data: 'name', name: 'surname'},
+					{data: 'surname', name: 'surname'},
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
                     {data: 'actions', name: '{{ trans('global.actions') }}'}
