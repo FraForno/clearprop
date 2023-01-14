@@ -203,12 +203,12 @@
                                                             <div class="col-5">
                                                                 @foreach($booking->bookingInstructors as $instructorBookings)
                                                                     <span
-                                                                            class="{{ $instructorBookings->id == auth()->user()->id ? 'font-weight-bold' : 'font-weight-light'}}">{{ $instructorBookings->name ?? '' }}</span>
+                                                                            class="{{ $instructorBookings->id == auth()->user()->id ? 'font-weight-bold' : 'font-weight-light'}}">{{ $instructorBookings->surname_name ?? '' }}</span>
                                                                     <br>
                                                                 @endforeach
                                                                 @foreach($booking->bookingUsers as $userBookings)
                                                                     <span
-                                                                            class="{{ $userBookings->id == auth()->user()->id ? 'font-weight-bold' : 'font-weight-light'}}">{{ $userBookings->name ?? '' }}</span>
+                                                                            class="{{ $userBookings->id == auth()->user()->id ? 'font-weight-bold' : 'font-weight-light'}}">{{ $userBookings->surname_name ?? '' }}</span>
                                                                     <br>
                                                                     @if($loop->last)
                                                                         @if($booking->checkin == 1 && $booking->seats_available > 0 && $booking->status == 1 && $userBookings->id != auth()->user()->id)
@@ -331,11 +331,11 @@
         $(document).ready(function () {
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'timeGridWeek',
+                initialView: 'dayGridMonth',
                 allDaySlot: false,
                 slotMinTime: '07:00:00',
                 slotMaxTime: '20:00:00',
-                slotDuration: '01:00:00',
+                slotDuration: '00:30:00',
                 slotLabelFormat: {hour: '2-digit', minute: '2-digit', hour12: false},
                 eventTimeFormat: {hour: '2-digit', minute: '2-digit', hour12: false},
                 locale: '{{app()->getLocale()}}',

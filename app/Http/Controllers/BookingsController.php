@@ -140,11 +140,11 @@ class BookingsController extends Controller
 
         $planes = Plane::all()->pluck('callsign', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $users = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::all()->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $instructors = User::whereHas('roles', function ($role) {
             $role->where('role_id', User::IS_INSTRUCTOR);
-        })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        })->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $slots = Slot::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -186,13 +186,13 @@ class BookingsController extends Controller
         $mode_id = $booking->mode_id;
         $mode_name = Mode::findOrFail($mode_id);
 
-        $users = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::all()->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $planes = Plane::all()->pluck('callsign', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $instructors = User::whereHas('roles', function ($role) {
             $role->where('role_id', User::IS_INSTRUCTOR);
-        })->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        })->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $slots = Slot::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 

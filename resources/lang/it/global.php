@@ -272,7 +272,7 @@ return [
     'medicalCheck_for_admin' => 'Il pilota selezionato non ha una visita medica valida. Puoi solo prenotare con istruttore.',
     'activityCheck_for_admin' => 'Il pilota selezionato non rispetta il limite di sicurezza impostato.',
     'balanceCheck_for_admin' => 'Il pilota selezionato ha un credito residuo inferiore al limite impostato.',
-    'ratingCheck_for_admin' => 'Non esiste un rating per la combinazione pilota/aeroplano.',
+    'ratingCheck_for_admin' => 'Il pilota non risulta abilitato su questo aeroplano.',
     'general' => 'General',
     'new' => 'Nuovo',
     'planeNotAvailable' => 'Esiste già una prenotazione per queste date. Scegli uno slot libero',

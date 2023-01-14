@@ -14,12 +14,12 @@ class Booking extends Model
     public $table = 'bookings';
 
     const STATUS_RADIO = [
-        '0' => 'pending',
-        '1' => 'confirmed',
+        '0' => 'provvisorio',
+        '1' => 'confermato',
     ];
     const INSTRUCTOR_NEEDED_RADIO = [
         '0' => 'no',
-        '1' => 'yes',
+        '1' => 'si',
     ];
 
     protected $dates = [

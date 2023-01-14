@@ -133,7 +133,7 @@
                             class="form-check  form-check-inline icheck-primary {{ $errors->has('status') ? 'is-invalid' : '' }}">
                             <input class="form-check-input" type="radio" id="status_{{ $key }}" name="status"
                                    value="{{ $key }}"
-                                   {{ old('status', $booking->status) === (string) $key ? 'checked' : '' }} required>
+                                   {{ old('status', $booking->status) == (string) $key ? 'checked' : '' }} required>
                             <label class="form-check-label" for="status_{{ $key }}">{{ $label }}</label>
                         </div>
                     @endforeach
