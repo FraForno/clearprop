@@ -111,7 +111,7 @@
                                 class="help-block text-secondary small">{{ trans('cruds.activity.fields.event_helper') }}</span>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" hidden>
                     <div
                             class="form-check form-check-inline icheck-primary {{ $errors->has('engine_warmup') ? 'is-invalid' : '' }}">
                         <input type="hidden" name="engine_warmup" value="0">
@@ -126,7 +126,7 @@
                     <span
                             class="help-block text-secondary small">{{ trans('cruds.activity.fields.engine_warmup_helper') }}</span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" hidden>
                     <label for="warmup_start">{{ trans('cruds.activity.fields.warmup_start') }}</label>
                     <input class="form-control {{ $errors->has('warmup_start') ? 'is-invalid' : '' }}" type="number"
                            name="warmup_start" id="warmup_start" value="{{ old('warmup_start', '0') }}" step="0.01"
@@ -137,7 +137,7 @@
                     <span
                             class="help-block text-secondary small">{{ trans('cruds.activity.fields.warmup_start_helper') }}</span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" hidden>
                     <label class="required"
                            for="counter_start">{{ trans('cruds.activity.fields.counter_start') }}</label>
                     <input class="form-control {{ $errors->has('counter_start') ? 'is-invalid' : '' }}" type="number"
@@ -149,7 +149,7 @@
                     <span
                             class="help-block text-secondary small">{{ trans('cruds.activity.fields.counter_start_helper') }}</span>
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label class="required" for="counter_stop">{{ trans('cruds.activity.fields.counter_stop') }}</label>
                     <input class="form-control {{ $errors->has('counter_stop') ? 'is-invalid' : '' }}" type="number"
                            name="counter_stop" id="counter_stop" value="{{ old('counter_stop', '0') }}" step="0.01"
@@ -159,6 +159,17 @@
                     @endif
                     <span
                             class="help-block text-secondary small">{{ trans('cruds.activity.fields.counter_stop_helper') }}</span>
+                </div>-->
+				<div class="form-group">
+                    <label class="required" for="counter_stop">{{ trans('cruds.activity.fields.counter_stop_hhmm') }}</label>
+                    <input class="form-control {{ $errors->has('counter_stop') ? 'is-invalid' : '' }}" type="number"
+                           name="counter_stop" id="counter_stop" value="{{ old('counter_stop', '0') }}" step="1"
+                           required>
+                    @if($errors->has('counter_stop'))
+                        <span class="text-danger">{{ $errors->first('counter_stop') }}</span>
+                    @endif
+                    <span
+                            class="help-block text-secondary small">{{ trans('cruds.activity.fields.counter_stop_hhmm_helper') }}</span>
                 </div>
                 <div class="form-group">
                     <label for="departure">{{ trans('cruds.activity.fields.departure') }}</label>

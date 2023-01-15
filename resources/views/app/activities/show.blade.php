@@ -80,7 +80,7 @@
                             {{ $activity->event }}
                         </td>
                     </tr>
-                    <tr>
+                    <tr hidden>
                         <th>
                             {{ trans('cruds.activity.fields.engine_warmup') }}
                         </th>
@@ -88,7 +88,7 @@
                             <input type="checkbox" disabled="disabled" {{ $activity->engine_warmup ? 'checked' : '' }}>
                         </td>
                     </tr>
-                    <tr>
+                    <tr hidden>
                         <th>
                             {{ trans('cruds.activity.fields.warmup_start') }}
                         </th>
@@ -96,7 +96,7 @@
                             {{ $activity->warmup_start }}
                         </td>
                     </tr>
-                    <tr>
+                    <tr hidden>
                         <th>
                             {{ trans('cruds.activity.fields.counter_start') }}
                         </th>
@@ -104,12 +104,20 @@
                             {{ $activity->counter_start }}
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>
                             {{ trans('cruds.activity.fields.counter_stop') }}
                         </th>
                         <td>
                             {{ $activity->counter_stop }}
+                        </td>
+                    </tr> -->
+					<tr>
+                        <th>
+                            {{ trans('cruds.activity.fields.counter_stop_hhmm') }}
+                        </th>
+                        <td>
+                            {{ (floor($activity->counter_stop)*60) + (($activity->counter_stop-floor($activity->counter_stop))*100) }}
                         </td>
                     </tr>
                     <tr>

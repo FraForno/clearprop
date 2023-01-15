@@ -259,6 +259,8 @@ return [
             'counter_start_helper' => 'Lasciare 0 per misura in ore e minuti',
             'counter_stop' => 'Orametro fine',
             'counter_stop_helper' => 'Inserire HH.MM in caso di misura in ore e minuti (es. 0.3 per mezz\'ora)',
+			'counter_stop_hhmm' => 'Minuti di volo',
+            'counter_stop_hhmm_helper' => 'Inserire i minuti di volo (es. 30 per mezz\'ora o 120 per due ore)',
             'warmup_minutes' => 'Minuti di riscaldamento',
             'warmup_minutes_helper' => '',
             'rate' => 'Prezzo di base',

@@ -13,11 +13,11 @@ class SplitCostService
             $data_pilot = clone $request;
             $data_copilot = clone $request;
 
-            $counter_split_value = ($request->counter_stop-$request->counter_start)/2;
+            $counter_split_value = (($request->counter_stop/100)-$request->counter_start)/2; //FFORNO 15/01/2023 - divided by 100 to account for input in minutes
             $counter_start_p    = $request->counter_start;
-            $counter_stop_p     = $counter_start_p+$counter_split_value;
+            $counter_stop_p     = ($counter_start_p+$counter_split_value); 
             $counter_start_c    = $counter_stop_p;
-            $counter_stop_c     = $counter_start_c+$counter_split_value;
+            $counter_stop_c     = ($counter_start_c+$counter_split_value);
 
             $data_copilot->merge([
                 'user_id' => $data_pilot->copilot_id,

@@ -119,7 +119,7 @@ class ActivitiesController extends Controller
             $role->where('role_id', User::IS_INSTRUCTOR);
         })->pluck('surname_name', 'id')->prepend(trans('global.pleaseSelect'), '');
 		
-		debug($instructors);
+		//debug($instructors);
 
         $planes = Plane::all()->pluck('callsign', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -129,7 +129,9 @@ class ActivitiesController extends Controller
     public function store(StoreActivityRequest $request)
     {
         if ($request->split_cost == false) {
-            $activity = Activity::create($request->all());
+			$requestData = $request->all();
+			$requestData ['counter_stop'] = intdiv($requestData ['counter_stop'], 60) + (($requestData ['counter_stop'] % 60) / 100);
+            $activity = Activity::create($requestData);
             event(new ActivityCostCalculation($activity));
         }
 
@@ -169,7 +171,9 @@ class ActivitiesController extends Controller
 
     public function update(UpdateActivityRequest $request, Activity $activity)
     {
-        $activity->update($request->all());
+		$requestData = $request->all();
+		$requestData ['counter_stop'] = intdiv($requestData ['counter_stop'], 60) + (($requestData ['counter_stop'] % 60) / 100);
+        $activity->update($requestData);
         event(new ActivityCostCalculation($activity));
 
         return redirect()->route('app.activities.index');

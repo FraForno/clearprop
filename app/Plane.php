@@ -17,7 +17,7 @@ class Plane extends Model
     ];
 
     const COUNTER_TYPE_SELECT = [
-        '100' => 'Industrial minutes (100/hour)',
+        //'100' => 'Industrial minutes (100/hour)',
         '060' => 'Hours and minutes (hh,mm)',
     ];
     protected $dates = [
