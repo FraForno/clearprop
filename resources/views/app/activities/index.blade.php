@@ -53,6 +53,9 @@
                                         {{ trans('cruds.activity.fields.user') }}
                                     </th>
                                 @endcan
+								<th>
+                                    {{ trans('cruds.activity.fields.instructor') }}
+                                </th>
                                 <th>
                                     {{ trans('cruds.activity.fields.plane') }}
                                 </th>
@@ -161,6 +164,7 @@
                         data: 'user_name', name: 'user.surname_name'
                     },
                         @endcan
+					{data: 'instructor_name', name: 'instructor.surname_name'},
                     {
                         data: 'plane_callsign', name: 'plane.callsign'
                     },

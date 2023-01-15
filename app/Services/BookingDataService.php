@@ -35,7 +35,8 @@ class BookingDataService
             }
 
             $collectionBookingEvents[] = [
-                'title' => $bookingDateItem->plane->callsign,
+                //'title' => $bookingDateItem->plane->callsign,
+				'title' => count($bookingDateItem->bookingUsers) == 1 ? $bookingDateItem->bookingUsers[0]->surname : 'Lezione',
                 'start' => Carbon::createFromFormat('d/m/Y H:i', $bookingDateItem->reservation_start)->format('Y-m-d H:i'),
                 'end' => Carbon::createFromFormat('d/m/Y H:i', $bookingDateItem->reservation_stop)->format('Y-m-d H:i'),
                 'backgroundColor' => $backgroundColor,
@@ -43,7 +44,7 @@ class BookingDataService
                 'description' => $bookingDateItem->description,
             ];
         }
-        debug(json_encode($collectionBookingEvents));
+        //debug(json_encode($collectionBookingEvents));
         return json_encode($collectionBookingEvents);
     }
 

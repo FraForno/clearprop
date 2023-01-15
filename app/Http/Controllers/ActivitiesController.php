@@ -56,6 +56,10 @@ class ActivitiesController extends Controller
                 return $row->user ? $row->user->surname_name : '';
             });
 			
+			$table->addColumn('instructor_name', function ($row) {
+                return $row->instructor ? $row->instructor->surname_name : '';
+            });
+			
 			$table->addColumn('paid_check', function ($row) {
                 return $row->paid == 0 ? 'No' : 'Si';
             });

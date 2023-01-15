@@ -14,8 +14,13 @@ class Activity extends Model
     public $table = 'activities';
 
     const SPLIT_COST_RADIO = [
-        '0' => 'No split',
+        '0' => 'No suddivisione',
         '1' => '50-50',
+    ];
+	
+	const PAID_RADIO = [
+        '0' => 'No',
+        '1' => 'Si',
     ];
 
     protected $dates = [
