@@ -10,7 +10,7 @@ use App\Traits\CurrentUserTrait;
 class Activity extends Model
 {
     use SoftDeletes, CurrentUserTrait;
-
+	
     public $table = 'activities';
 
     const SPLIT_COST_RADIO = [
@@ -50,6 +50,7 @@ class Activity extends Model
         'updated_at',
         'deleted_at',
         'created_by_id',
+		'paid',
     ];
 
     public function user()

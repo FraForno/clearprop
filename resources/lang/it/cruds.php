@@ -267,6 +267,8 @@ return [
             'minutes_helper' => '',
             'amount' => 'Importo',
             'amount_helper' => '',
+			'paid' => 'Pagato',
+            'paid_helper' => '',
             'departure' => 'Campo di partenza',
             'departure_helper' => '',
             'arrival' => 'Campo di destinazione',

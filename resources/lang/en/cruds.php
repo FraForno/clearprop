@@ -263,6 +263,8 @@ return [
             'minutes_helper' => '',
             'amount' => 'Amount',
             'amount_helper' => '',
+			'paid' => 'Paid',
+            'paid_helper' => '',
             'departure' => 'Departure',
             'departure_helper' => '',
             'arrival' => 'Arrival',

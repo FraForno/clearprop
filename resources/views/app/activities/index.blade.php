@@ -56,14 +56,17 @@
                                 <th>
                                     {{ trans('cruds.activity.fields.plane') }}
                                 </th>
-                                <th>
+                           <!-- <th>
                                     {{ trans('cruds.activity.fields.counter') }}
-                                </th>
+                                </th> -->
                                 <th>
                                     {{ trans('cruds.activity.fields.minutes') }}
                                 </th>
-                                <th>
+                           <!-- <th>
                                     {{ trans('cruds.activity.fields.amount') }}
+                                </th> -->
+								<th>
+                                    {{ trans('cruds.activity.fields.paid') }}
                                 </th>
                                 <th data-priority="2">
                                     &nbsp;
@@ -155,15 +158,16 @@
                     {data: 'type_name', name: 'type.name'},
                         @can('activity_all_users_access')
                     {
-                        data: 'user_name', name: 'user.name'
+                        data: 'user_name', name: 'user.surname_name'
                     },
                         @endcan
                     {
                         data: 'plane_callsign', name: 'plane.callsign'
                     },
-                    {data: 'counter', name: 'counter', orderable: false, searchable: false},
+                    //{data: 'counter', name: 'counter', orderable: false, searchable: false},
                     {data: 'minutes', name: 'minutes'},
-                    {data: 'amount', name: 'amount'},
+                    //{data: 'amount', name: 'amount'},
+					{data: 'paid_check', name: 'paid_check'},
                     {data: 'actions', name: '{{ trans('global.actions') }}'}
                 ],
                 order: [[1, 'desc']],

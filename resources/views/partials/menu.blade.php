@@ -68,7 +68,7 @@
                         </a>
                     </li>
                 @endcan
-                @can('expense_management_access')
+                @can('expense_management_access') <!--
                     <li class="nav-item has-treeview {{ request()->is('admin/expense-categories*') ? 'menu-open' : '' }} {{ request()->is('admin/income-categories*') ? 'menu-open' : '' }} {{ request()->is('admin/expenses*') ? 'menu-open' : '' }} {{ request()->is('admin/incomes*') ? 'menu-open' : '' }} {{ request()->is('admin/expense-reports*') ? 'menu-open' : '' }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon fas fa-money-check"></i>
@@ -136,7 +136,7 @@
                                 </li>
                             @endcan
                         </ul>
-                    </li>
+                    </li> -->
                 @endcan
                 @can('asset_management_access')
                     <li class="nav-item has-treeview {{ request()->is("admin/assets") ? "menu-open" : "" }} {{ request()->is("admin/planes") ? "menu-open" : "" }}">
