@@ -35,11 +35,11 @@
 
                 <div class="card-body">
 					<p>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a><br>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a><br>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a><br>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a><br>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br>
 						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/ENG/index.html" target="_blank">Quiz Fonia Inglese</a>
 					</p>
 
