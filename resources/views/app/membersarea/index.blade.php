@@ -34,7 +34,14 @@
                 </div>
 
                 <div class="card-body">
-					<p> <?php session_start(); $_SESSION['loggedIn'] = true; ?> <a href="http://www.scuolavoloastra.it/docs/quiz_fonia/1/index.php" target="_blank">Quiz Fonia</a></p>
+					<p>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a>
+						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/ENG/index.html" target="_blank">Quiz Fonia Inglese</a>
+					</p>
 
                     <!--
 					<div class="table-responsive">
