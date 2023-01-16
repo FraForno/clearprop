@@ -3,6 +3,7 @@
 return [
     'dashboard' => [
         'greeting' => 'Welcome ',
+		'unauthorized' => 'Access not authorized',
         'title' => 'Dashboard',
         'statistics' => [
             'global' => 'Global',

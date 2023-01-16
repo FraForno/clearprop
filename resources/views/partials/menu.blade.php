@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
     <!-- Brand Logo -->
     <a href="{{route('app.home')}}" class="brand-link">
-      <img src="{{ env('APP_URL').'/images/astralogo.png' }}" alt="Astra Logo" height="45px" style="opacity: .8">
+      <span class="brand-text"><img src="{{ env('APP_URL').'/images/astralogo.png' }}" alt="Astra Logo" height="45px" style="opacity: .8"></span>
       {{-- <span class="brand-text font-weight-light">{{ trans('panel.site_title') }}</span> --}}
     </a>
 
@@ -21,11 +21,12 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="{{ route("app.home") }}" class="nav-link">
-                        <p>
-                            <i class="fas fa-fw nav-icon fa-tachometer-alt">
+                        
+                         <i class="fa-fw nav-icon fas fa-tachometer-alt">
 
-                            </i>
-                            <span>{{ trans('global.dashboard') }}</span>
+                         </i>
+                         <p>   
+							<span>{{ trans('global.dashboard') }}</span>
                         </p>
                     </a>
                 </li>
@@ -42,6 +43,19 @@
                         </a>
                     </li>
                 @endcan
+				@can('members_access')
+				<li class="nav-item">
+                    <a href="{{ route("app.membersarea.index") }}" class="nav-link">
+                        
+                        <i class="fa-fw nav-icon fas fa-lock">
+
+                        </i>
+                        <p>   
+							<span>{{ trans('global.membersarea') }}</span>
+                        </p>
+                    </a>
+                </li>
+				@endcan
                 @can('activity_report_access')
                     <li class="nav-item">
                         <a href="{{ route("admin.activity-reports.index") }}"
@@ -175,7 +189,7 @@
                 @endcan
                 @can('setting_access')
                     <li class="nav-item has-treeview
-                        {{ request()->is('admin/parameters*') ? 'menu-open' : '' }}
+                    {{ request()->is('admin/parameters*') ? 'menu-open' : '' }}
                     {{ request()->is('admin/permissions*') ? 'menu-open' : '' }}
                     {{ request()->is('admin/roles*') ? 'menu-open' : '' }}
                     {{ request()->is('admin/user-alerts*') ? 'menu-open' : '' }}
@@ -290,11 +304,12 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link"
                        onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
-                        <p>
-                            <i class="fas fa-fw nav-icon fa-sign-out-alt">
+                        
+                         <i class="fas fa-fw nav-icon fa-sign-out-alt">
 
-                            </i>
-                            <span>{{ trans('global.logout') }}</span>
+                         </i>
+                         <p>   
+							<span>{{ trans('global.logout') }}</span>
                         </p>
                     </a>
                 </li>

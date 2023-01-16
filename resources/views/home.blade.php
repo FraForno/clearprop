@@ -89,6 +89,7 @@
             </div>
         </div>
     </div>
+	@can('booking_show')
     <div class="row">
         <div class="col-md-12">
             <div class="card card-primary card-outline">
@@ -321,6 +322,7 @@
             </div>
         </div>
     </div>
+	@endcan
 
 @endsection
 

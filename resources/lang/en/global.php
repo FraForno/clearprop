@@ -10,6 +10,7 @@ return [
     'clickHereToVerify' => 'Click here to verify',
     'create' => 'Create',
     'dashboard' => 'Dashboard',
+	'membersarea' => 'Members area',
     'delete' => 'Delete',
     'downloadFile' => 'Download file',
     'edit' => 'Edit',

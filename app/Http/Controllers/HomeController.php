@@ -37,11 +37,13 @@ class HomeController extends Controller
                 }
             }
         }
+		
+		$userIsContactOnly = Auth::user()->IsContactOnly;
 
         $bookingDates = (new BookingDataService())->getBookingDataForCards();
         $bookingCalendarEvents = (new BookingDataService())->getBookingDataForCalendar();
 
-        return view('home', compact('bookingDates', 'bookingCalendarEvents', 'collectionActivityStatistics', 'currentUserMedicalBeyondDueDate'));
+        return view('home', compact('bookingDates', 'bookingCalendarEvents', 'collectionActivityStatistics', 'currentUserMedicalBeyondDueDate', 'userIsContactOnly'));
     }
 
 }

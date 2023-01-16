@@ -10,6 +10,7 @@ return [
     'clickHereToVerify' => 'Clicca per verificare',
     'create' => 'Crea',
     'dashboard' => 'Dashboard',
+	'membersarea' => 'Area riservata',
     'delete' => 'Elimina',
     'downloadFile' => 'Scarica file',
     'edit' => 'Modifica',

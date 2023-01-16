@@ -24,6 +24,9 @@ Route::group(['prefix' => 'app', 'as' => 'app.', 'middleware' => ['auth']], func
     Route::get('activities/planeActivities/{plane_id}', [ActivitiesController::class, 'getActivitiesByPlane'])->name('activities.getActivitiesByPlane');
     Route::delete('activities/destroy', [ActivitiesController::class, 'massDestroy'])->name('activities.massDestroy');
     Route::resource('activities', ActivitiesController::class);
+	
+	//Members Area
+	Route::resource('membersarea', MembersAreaController::class);
 
     // Bookings
     Route::post('bookings/book/{id}', [BookingsController::class, 'book'])->name('bookings.book');

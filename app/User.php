@@ -84,6 +84,11 @@ class User extends Authenticatable // implements MustVerifyEmail
     {
         return $this->belongsToMany(Role::class);
     }
+	
+	public function getIsMemberAttribute()
+    {
+        return $this->roles()->where('id', 2)->exists();
+    }
 
     public function getIsManagerAttribute()
     {
@@ -103,6 +108,11 @@ class User extends Authenticatable // implements MustVerifyEmail
 	public function getIsContactAttribute()
     {
         return $this->roles()->where('id', 6)->exists();
+    }
+	
+	public function getIsContactOnlyAttribute()
+    {
+        return ($this->roles()->where('id', 6)->exists() && $this->roles()->where('id', '!=', 6)->doesntExist());
     }
 
     public function userActivities()
