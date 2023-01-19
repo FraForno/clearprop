@@ -1,5 +1,7 @@
 /node_modules
 /public/hot
+/public/phpinfo.php
+/public/astrawiki/LocalSettings.php
 /public/storage
 /storage/*.key
 /storage/tmp

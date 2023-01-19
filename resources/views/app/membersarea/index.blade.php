@@ -29,18 +29,18 @@
             <div class="card card-primary card-outline">
                 <div class="card-header d-flex p-0 border-none">
                     <h3 class="card-title p-3">
-                        <i class="fas fa-lock mr-1"></i>
+                        <strong>Corso di radiotelefonia aeronautica</strong>
                     </h3>
                 </div>
 
                 <div class="card-body">
 					<p>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a><br>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a><br>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a><br>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a><br>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br>
-						<a href="http://www.scuolavoloastra.it/docs/quiz_fonia/ENG/index.html" target="_blank">Quiz Fonia Inglese</a>
+						<a href="{{env('APP_URL');}}/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a><br>
+						<a href="{{env('APP_URL');}}/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a><br>
+						<a href="{{env('APP_URL');}}//3/index.html" target="_blank">Quiz Fonia Parte 3</a><br>
+						<a href="{{env('APP_URL');}}/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a><br>
+						<a href="{{env('APP_URL');}}/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br>
+						<a href="{{env('APP_URL');}}/quiz_fonia/ENG/index.html" target="_blank">Quiz Fonia Inglese</a>
 					</p>
 
                     <!--
@@ -87,6 +87,18 @@
                             </thead>
                         </table>
                     </div> -->
+                </div>
+				
+				<div class="card-header d-flex p-0 border-none">
+                    <h3 class="card-title p-3">
+                        <strong>AstraWiki</strong>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+					<p>
+						<a href="{{env('APP_URL');}}/astrawiki" target="_blank">Accedi</a> alla Wiki della teoria del volo!
+					</p>
                 </div>
             </div>
         </div>
