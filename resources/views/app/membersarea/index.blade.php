@@ -27,6 +27,8 @@
     <div class="row">
         <div class="col-12">
             <div class="card card-primary card-outline">
+			
+				<!-- Fonia -->
                 <div class="card-header d-flex p-0 border-none">
                     <h3 class="card-title p-3">
                         <strong>Corso di radiotelefonia aeronautica</strong>
@@ -89,6 +91,7 @@
                     </div> -->
                 </div>
 				
+				<!-- Wiki -->
 				<div class="card-header d-flex p-0 border-none">
                     <h3 class="card-title p-3">
                         <strong>AstraWiki</strong>
@@ -98,6 +101,20 @@
                 <div class="card-body">
 					<p>
 						<a href="{{env('APP_URL');}}/astrawiki" target="_blank">Accedi</a> alla Wiki della teoria del volo!
+					</p>
+                </div>
+				
+				<!-- Documenti -->
+				<div class="card-header d-flex p-0 border-none">
+                    <h3 class="card-title p-3">
+                        <strong>Documenti</strong>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+					<p>
+						<a href="{{env('APP_URL');}}/docs/Statuto Club Astra.pdf" target="_blank">Statuto del Club</a><br>
+						<a href="{{env('APP_URL');}}/docs/VERBALE CD DEL 14 GENN 23.pdf" target="_blank">Verbale CD del 14/01/2023</a><br>
 					</p>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 /node_modules
 /public/hot
 /public/phpinfo.php
-/public/astrawiki/LocalSettings.php
+/public/astrawiki
+/public/quiz_fonia
 /public/storage
 /storage/*.key
 /storage/tmp
