@@ -21,17 +21,20 @@ class UserDataReportJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $user;
+	protected $to;
+	protected $sender;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct(User $user, $to)
     {
         $this->user = $user;
-		$this->to = "francescoforno@gmail.com";
+		$this->to = $to;
         $this->sender = "noreply@scuolavoloastra.it";
+		$this->recipient = "francescoforno@gmail.com";
     }
 
     /**
@@ -42,14 +45,24 @@ class UserDataReportJob implements ShouldQueue
     public function handle()
     {
         try {
-            $report_name = $this->to.'_'.$user->name.'_'.uniqid();
+            /*$report_name = $this->to.'_'.$user->name.'_'.uniqid();
             $path = storage_path($_ENV['APP_URL'] . '/tmp/reports');
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
             }
 
             $data  = ['date' => $this->to];
-            Notification::send($user, new UserDataReportEmailNotification($data, $attachment, $sender_email));
+            Notification::send($user, new UserDataReportEmailNotification($data, $attachment, $sender));*/
+			
+			mail(	$recipient, //To
+
+					"Report visite mediche in scdenza al " . $to, //Subject
+
+					"In allegato", //Message
+
+					$headers = 'From: ' . $sender . '\r\n' .
+						'Reply-To: ' . $sender . "\r\n" .
+						'X-Mailer: PHP/' . phpversion());
 
             return;
         } catch (Throwable $exception) {

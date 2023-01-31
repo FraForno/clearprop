@@ -53,13 +53,13 @@ class UsersReportController extends Controller
 			
 			foreach ($usersWithMedicalDue as $user) {
                 try {
-                    UserDataReportJob::dispatch($user);
+                    UserDataReportJob::dispatch($user, $to);
                 } catch (Throwable $exception) {
 					return false;
 				}
 			}
 			
-			return true;
+			return back();
 		}
 		
 		return false;
