@@ -34,9 +34,8 @@ class UserDataReportJob implements ShouldQueue
     {
         $this->user = $user;
         $this->from = $from;
-        //$this->to = $to;
-		$this->to = "francescoforno@gmail.com";
-        $this->sender = $sender;
+        $this->to = $to;
+		$this->sender = $sender;
     }
 
     /**
