@@ -56,6 +56,7 @@ class UsersReportController extends Controller
                     UserDataReportJob::dispatch($user);
                 } catch (Throwable $exception) {
 					return false;
+				}
 			}
 			
 			return true;
