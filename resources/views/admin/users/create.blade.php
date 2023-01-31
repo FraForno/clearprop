@@ -78,8 +78,8 @@
                             <select class="form-control {{ $errors->has('lang') ? 'is-invalid' : '' }}" name="lang"
                                     id="lang"
                                     required>
-                                <option value
-                                        disabled {{ old('lang', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                             <!--   <option value
+                                        disabled {{ old('lang', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option> -->
                                 @foreach(App\User::LANG_SELECT as $key => $label)
                                     <option
                                             value="{{ $key }}" {{ old('lang', 'it') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
@@ -186,7 +186,7 @@
                                     name="factor_id"
                                     id="factor_id" required>
                                 @foreach($factors as $id => $factor)
-                                    <option value="{{ $id }}" {{ old('factor_id') == $id ? 'selected' : '' }}>{{ $factor }}</option>
+                                    <option value="{{ $id }}" {{ old('factor_id', 1) == $id ? 'selected' : '' }}>{{ $factor }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('factor'))
