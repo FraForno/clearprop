@@ -23,7 +23,7 @@
                     </h3>
                 </div>
 
-  <!--              <div class="card-body">
+                <div class="card-body">
 					<form method="POST" action="{{ route("admin.users.report") }}" enctype="multipart/form-data">
 					@csrf
                         <div class="row">
@@ -33,7 +33,7 @@
 								<br />
                                 
 								<label class="control-label" for="toSelectedDate">Scadenza visita entro:</label>
-								<input type="date" id="toSelectedDate" name="toSelectedDate" required />
+								<input type="date" id="toSelectedDate" name="toSelectedDate" value="{{date('Y-m-d')}}" required />
                             </div>                            
                         </div>
 						<div class="row">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 
 @endsection
 
