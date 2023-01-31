@@ -58,7 +58,7 @@ class UsersReportController extends Controller
 					"In allegato.", //Message
 
 					$headers = 'From: ' . 'noreply@scuolavoloastra.it' . '\r\n' .
-						'Reply-To: ' . 'noreply@scuolavoloastra.it' . "\r\n" .
+						'Reply-To: ' . 'noreply@scuolavoloastra.it' . '\r\n' .
 						'X-Mailer: PHP/' . phpversion());
 			
 			return back();
