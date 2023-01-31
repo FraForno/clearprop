@@ -21,20 +21,22 @@ class UserDataReportJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $user;
-	protected $to;
-	protected $sender;
+    protected $from;
+    protected $to;
+    protected $sender;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(User $user, $to)
+    public function __construct(User $user, $from, $to, $sender)
     {
         $this->user = $user;
-		$this->to = $to;
-        $this->sender = "noreply@scuolavoloastra.it";
-		$this->recipient = "francescoforno@gmail.com";
+        $this->from = $from;
+        //$this->to = $to;
+		$this->to = "francescoforno@gmail.com";
+        $this->sender = $sender;
     }
 
     /**
@@ -45,24 +47,55 @@ class UserDataReportJob implements ShouldQueue
     public function handle()
     {
         try {
-            /*$report_name = $this->to.'_'.$user->name.'_'.uniqid();
-            $path = storage_path($_ENV['APP_URL'] . '/tmp/reports');
+            $user = $this->user;
+            $sender_email = $this->sender->email;
+
+            $report_name = $this->to.'_'.$user->name.'_'.uniqid();
+            $path = storage_path('tmp/reports');
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
             }
 
-            $data  = ['date' => $this->to];
-            Notification::send($user, new UserDataReportEmailNotification($data, $attachment, $sender));*/
-			
-			mail(	$recipient, //To
+            $activity_lines = Activity::select('event', 'counter_start', 'counter_stop', 'rate', 'minutes', 'amount')
+                ->where('user_id', '=', $user->id)
+                ->whereBetween('event', [$this->from, $this->to])
+                ->orderBy('event', 'DESC')
+                ->get();
 
-					"Report visite mediche in scdenza al " . $to, //Subject
+            $activityAmountTotal = $activity_lines->sum('amount');
+            $activityMinutesTotal = $activity_lines->sum('minutes');
+            $activityHoursAndMinutes = sprintf("%02d", intval($activityMinutesTotal / 60)) . ':' . sprintf("%02d", $activityMinutesTotal%60);
 
-					"In allegato", //Message
 
-					$headers = 'From: ' . $sender . '\r\n' .
-						'Reply-To: ' . $sender . "\r\n" .
-						'X-Mailer: PHP/' . phpversion());
+            $income_lines = Income::whereHas('income_category', function ($q) {
+                $q->where('deposit', '=', 1);
+            })
+                ->whereBetween('entry_date', [$this->from, $this->to])
+                ->where('user_id', '=', $user->id)
+                ->orderBy('entry_date', 'DESC')
+                ->get();
+            $incomeAmountTotal = $income_lines->sum('amount');
+
+
+            $granTotal = $incomeAmountTotal + -abs($activityAmountTotal);
+
+            $pdf = Pdf::loadView('reports.members', compact(
+                'user',
+                'activity_lines',
+                'income_lines',
+                'activityMinutesTotal',
+                'activityHoursAndMinutes',
+                'activityAmountTotal',
+                'incomeAmountTotal',
+                'granTotal'
+            ));
+
+            $pdf->save($path.'/'.$report_name.'.pdf');
+
+            $attachment = $path.'/'.$report_name.'.pdf';
+
+            $data  = ['name' => $user->name, 'date' => $this->to];
+            Notification::send($user, new UserDataReportEmailNotification($data, $attachment, $sender_email));
 
             return;
         } catch (Throwable $exception) {

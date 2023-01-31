@@ -51,13 +51,15 @@ class UsersReportController extends Controller
 			
 			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->get();
 			
-			foreach ($usersWithMedicalDue as $user) {
-                try {
-                    UserDataReportJob::dispatch($user, $to);
-                } catch (Throwable $exception) {
-					return false;
-				}
-			}
+            mail(	"francescoforno@gmail.com", //To
+
+					"Report visite mediche in scadenza al " . $to, //Subject
+
+					"In allegato.", //Message
+
+					$headers = 'From: ' . 'noreply@scuolavoloastra.it' . '\r\n' .
+						'Reply-To: ' . 'noreply@scuolavoloastra.it' . "\r\n" .
+						'X-Mailer: PHP/' . phpversion());
 			
 			return back();
 		}
