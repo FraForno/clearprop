@@ -371,7 +371,7 @@ return [
         'title_singular' => 'Gestione attività',
     ],
     'activityReport' => [
-        'title' => 'Report mensile',
+        'title' => 'Report',
         'title_singular' => 'Report mensile',
         'title_generate' => 'Email socio',
         'description_text' => 'Genera il report delle attività di questo socio e mandalo a: ',
