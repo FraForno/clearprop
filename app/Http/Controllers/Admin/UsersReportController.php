@@ -22,7 +22,7 @@ class UsersReportController extends Controller
             $to = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y-m-d');
 			$to_file = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y_m_d');
 			
-			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->get();
+			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->orderBy('medical_due', 'asc')->get();
 			
             $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
@@ -37,9 +37,8 @@ class UsersReportController extends Controller
 							$user->medical_due.
 							"\n");
                 } catch (Throwable $exception) {
-					debug($exception);
-                    //report($exception);
-                    //return back()->withToastError($exception->getMessage());
+					report($exception);
+                    return false;
                 }
             }			
 			fclose($csv);
