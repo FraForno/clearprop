@@ -23,8 +23,8 @@ class UsersReportController extends Controller
 			
 			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->get();
 			
-            $file = $_SERVER["DOCUMENT_ROOT"]."/../tmp/report_scadenza_".$to.".txt";
-			$txt = fopen($file, "w") or return false;
+            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza.txt";
+			$txt = fopen($file, "w") or die("unable to open file");
 			fwrite($txt, "TEST");
 			fclose($txt);
 			
