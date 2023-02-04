@@ -87,7 +87,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route("profile.password.updateProfile") }}">
                         @csrf
-                        <div class="form-group">
+                       <!-- <div class="form-group">
                             <label class="required" for="name">{{ trans('cruds.user.fields.name') }}</label>
                             <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text"
                                    name="name" id="name" value="{{ old('name', auth()->user()->name) }}" required>
@@ -96,7 +96,7 @@
                                     {{ $errors->first('name') }}
                                 </div>
                             @endif
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label class="required" for="title">{{ trans('cruds.user.fields.email') }}</label>
                             <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text"
@@ -108,7 +108,7 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="form-group">
+                    <!--    <div class="form-group">
                             <label for="license">{{ trans('cruds.user.fields.license') }}</label>
                             <input class="form-control {{ $errors->has('license') ? 'is-invalid' : '' }}"
                                    type="text"
@@ -119,8 +119,8 @@
                             @endif
                             <span
                                     class="help-block text-secondary small">{{ trans('cruds.user.fields.license_helper') }}</span>
-                        </div>
-                        <div class="form-group">
+                        </div> -->
+                       <!-- <div class="form-group">
                             <label class="required"
                                    for="medical_due">{{ trans('cruds.user.fields.medical_due') }}</label>
                             <input class="form-control date {{ $errors->has('medical_due') ? 'is-invalid' : '' }}"
@@ -131,7 +131,7 @@
                             @endif
                             <span
                                     class="help-block text-secondary small">{{ trans('cruds.user.fields.medical_due_helper') }}</span>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <label class="required" for="taxno">{{ trans('cruds.user.fields.taxno') }}</label>
                             <input class="form-control {{ $errors->has('taxno') ? 'is-invalid' : '' }}" type="text"
@@ -144,7 +144,7 @@
                                     class="help-block text-secondary small">{{ trans('cruds.user.fields.taxno_helper') }}</span>
                         </div>
                         <div class="form-group">
-                            <label class="required" for="phone_1">{{ trans('cruds.user.fields.phone_1') }}</label>
+                            <label for="phone_1">{{ trans('cruds.user.fields.phone_1') }}</label>
                             <input class="form-control {{ $errors->has('phone_1') ? 'is-invalid' : '' }}"
                                    type="text"
                                    name="phone_1" id="phone_1" value="{{ old('phone_1', auth()->user()->phone_1) }}"

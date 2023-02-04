@@ -26,14 +26,14 @@
             @endif
             <span class="help-block text-secondary small">{!! trans('cruds.booking.fields.status_helper') !!}</span>
         </div>
-        <div class="form-group">
+        <!--<div class="form-group">
             <div class="icheck-primary">
                 <input type="checkbox" name="email" id="email"
                        value="1" {{ old('email', 0) == 1 ? 'checked' : '' }}>
                 <label for="email">{{ trans('cruds.booking.fields.email') }}</label>
             </div>
             <span class="help-block text-secondary small">{{ trans('cruds.booking.fields.email_helper') }}</span>
-        </div>
+        </div>-->
         @include('app.bookings.partials.formDescription')
         <div class="form-group">
             <button class="btn btn-success" type="submit">
@@ -79,15 +79,15 @@
                 }
 
                 if (data.ratingCheckPassed === false) {
-                    info_rating.show();
+                    //info_rating.show();
                 }
 
                 if (data.activityCheckPassed === false) {
-                    warning_activity.show();
+                    //warning_activity.show();
                 }
 
                 if (data.balanceCheckPassed === false) {
-                    info_balance.show();
+                    //info_balance.show();
                 }
             }
         });

@@ -65,23 +65,23 @@
                 }
 
                 if (data.ratingCheckPassed === false) {
-                    info_rating.show();
+                    /*info_rating.show();
                     instructor_needed_val_1.prop("checked", true);
-                    instructor_needed_val_0.prop("disabled", true);
+                    instructor_needed_val_0.prop("disabled", true);*/
                 }
 
                 if (data.activityCheckPassed === false) {
-                    warning_activity.show();
+                    /*warning_activity.show();
                     instructor_needed_val_1.prop("checked", true);
-                    instructor_needed_val_0.prop("disabled", true);
+                    instructor_needed_val_0.prop("disabled", true);*/
                 }
 
                 if (data.balanceCheckPassed === false) {
-                    info_balance.show();
+                   /* info_balance.show();
                     $("#reservation_start").prop("disabled", true);
                     $("#reservation_stop").prop("disabled", true);
                     $("#description").prop("disabled", true);
-                    $("button[type=submit]").prop("disabled", true);
+                    $("button[type=submit]").prop("disabled", true);*/
                 }
             }
         });

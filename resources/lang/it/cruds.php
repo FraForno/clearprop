@@ -6,7 +6,7 @@ return [
 		'unauthorized' => 'Accesso non autorizzato',
         'title' => 'Dashboard',
         'statistics' => [
-            'global' => 'Globale',
+            'global' => 'Tutto il Club',
             'instructor' => 'Come Instruttore',
             'personal' => 'Personale',
             'title_linechart' => 'Activities',
