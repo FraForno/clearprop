@@ -341,6 +341,7 @@
                 slotLabelFormat: {hour: '2-digit', minute: '2-digit', hour12: false},
                 eventTimeFormat: {hour: '2-digit', minute: '2-digit', hour12: false},
                 locale: '{{app()->getLocale()}}',
+				firstDay: 1,
                 height: "auto",
                 themeSystem: 'bootstrap',
                 headerToolbar: {
