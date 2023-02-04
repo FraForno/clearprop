@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label for="plane_id">{{ trans('cruds.booking.fields.instructor') }}</label>
+    <label for="instructor_id" class="required">{{ trans('cruds.booking.fields.instructor') }}</label>
     <div class="input-group">
         <div class="input-group-prepend">
               <span class="input-group-text">
@@ -7,7 +7,7 @@
               </span>
         </div>
         <select class="form-control select2 {{ $errors->has('instructor') ? 'is-invalid' : '' }}" name="instructor_id"
-                id="instructor_id">
+                id="instructor_id" required>
             @foreach($instructors as $id => $instructor)
                 <option
                     value="{{ $id }}" {{ old('instructor_id') == $id ? 'selected' : '' }}>{{ $instructor }}</option>
