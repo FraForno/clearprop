@@ -43,7 +43,7 @@ class UsersReportController extends Controller
                 }
             }			
 			fclose($csv);
-			chmod($file), 0777);
+			//chmod($file), 0777);
 			//gc_collect_cycles();
 			
 			header('Content-Description: File Transfer');
@@ -91,7 +91,7 @@ class UsersReportController extends Controller
                 }
             }			
 			fclose($csv);
-			chmod($file), 0777);
+			//chmod($file), 0777);
 			//gc_collect_cycles();
 			
 			header('Content-Description: File Transfer');
