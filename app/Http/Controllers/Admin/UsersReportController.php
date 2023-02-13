@@ -17,14 +17,15 @@ class UsersReportController extends Controller
     {
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 		
-		if ($request->input('toSelectedDate')) {			
-			$from = Carbon::createFromFormat('Y-m-d', date('Y-m-d'))->format('Y-m-d');
+		if ($request->input('toSelectedDate') && $request->input('fromSelectedDate')) {			
+			//$from = Carbon::createFromFormat('Y-m-d', date('Y-m-d'))->format('Y-m-d');
+			$from = Carbon::createFromFormat('Y-m-d', $request->input('fromSelectedDate'))->format('Y-m-d');
             $to = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y-m-d');
 			$to_file = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y_m_d');
 			
 			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->orderBy('medical_due', 'asc')->get();
 			
-            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_".$to_file.".csv";
+            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_medico_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
 			fwrite($csv, "NOME;COGNOME;E-MAIL;SCADENZA CERTIFICATO MEDICO\n");
@@ -42,6 +43,56 @@ class UsersReportController extends Controller
                 }
             }			
 			fclose($csv);
+			chmod($file), 0777);
+			//gc_collect_cycles();
+			
+			header('Content-Description: File Transfer');
+			header('Content-Disposition: attachment; filename='.basename($file));
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($file));
+			header("Content-Type: text/plain");
+			readfile($file);
+			
+			exit();
+		}
+		
+		return false;
+    }
+	
+	public function index2(Request $request)
+    {
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+		
+		if ($request->input('toSelectedDate')) {			
+			//$from = Carbon::createFromFormat('Y-m-d', date('Y-m-d'))->format('Y-m-d');
+			$from = Carbon::createFromFormat('Y-m-d', $request->input('fromSelectedDate'))->format('Y-m-d');
+            $to = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y-m-d');
+			$to_file = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y_m_d');
+			
+			$usersWithAssocDue = User::whereBetween('associate_due', [$from, $to])->orderBy('associate_due', 'asc')->get();
+			
+            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_quota_".$to_file.".csv";
+			$csv = fopen($file, "w") or die("unable to open file");
+			
+			fwrite($csv, "NOME;COGNOME;E-MAIL;SCADENZA QUOTA ASSOCIATIVA\n");
+			foreach ($usersWithAssocDue as $user) {
+                try {
+					fwrite(	$csv, 
+							$user->name.";".
+							$user->surname.";".
+							$user->email.";".
+							$user->associate_due.
+							"\n");
+                } catch (Throwable $exception) {
+					report($exception);
+                    return false;
+                }
+            }			
+			fclose($csv);
+			chmod($file), 0777);
+			//gc_collect_cycles();
 			
 			header('Content-Description: File Transfer');
 			header('Content-Disposition: attachment; filename='.basename($file));

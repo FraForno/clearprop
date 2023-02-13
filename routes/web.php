@@ -93,6 +93,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 	Route::get('users/contactUsers', [UsersController::class, 'getContactUsers'])->name('users.getContactUsers');
     Route::post('users/undelete/{user_id}', [UsersController::class, 'undelete'])->name('users.undelete');
     Route::post('users/report', 'UsersReportController@index')->name('users.report');
+	Route::post('users/report2', 'UsersReportController@index2')->name('users.report2');
     Route::post('users/individualReport/{user}', 'UsersReportController@individualReport')->name('users.individualReport');
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
