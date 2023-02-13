@@ -72,7 +72,7 @@
                             name="instructor_id" id="instructor_id" disabled>
                         @foreach($instructors as $id => $instructor)
                             <option
-                                    value="{{ $id }}" {{ old('instructor_id') == $id ? 'selected' : '' }}>{{ $instructor }}</option>
+                                    value="{{ $id }}" {{ ((old('instructor_id') == $id) || ((old('instructor_id', null) == null) && (auth()->user()->id == $id))) ? 'selected' : '' }}>{{ $instructor }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('instructor'))
@@ -86,7 +86,7 @@
                     <select class="form-control select2 {{ $errors->has('plane') ? 'is-invalid' : '' }}" name="plane_id"
                             id="plane_id" required>
                         @foreach($planes as $id => $plane)
-                            <option value="{{ $id }}" {{ old('plane_id') == $id ? 'selected' : '' }}>{{ $plane }}</option>
+                            <option value="{{ $id }}" {{ ((old('plane_id') == $id) || ((old('plane_id', null) == null) && (1 == $id))) ? 'selected' : '' }}>{{ $plane }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('plane'))
