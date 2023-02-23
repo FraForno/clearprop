@@ -95,6 +95,8 @@ return [
             'surname_helper' => '',
             'email' => 'Email',
             'email_helper' => '',
+			'pec' => 'PEC',
+            'pec_helper' => '',
             'email_verified_at' => 'Email verificata in data',
             'email_verified_at_helper' => '',
             'password' => 'Password',

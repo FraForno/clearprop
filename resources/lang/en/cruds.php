@@ -93,6 +93,8 @@ return [
             'name_helper' => '',
             'email' => 'Email',
             'email_helper' => '',
+			'pec' => 'PEC',
+            'pec_helper' => '',
             'email_verified_at' => 'Email verified at',
             'email_verified_at_helper' => '',
             'password' => 'Password',

@@ -98,13 +98,23 @@
                             @endif
                         </div> -->
                         <div class="form-group">
-                            <label class="required" for="title">{{ trans('cruds.user.fields.email') }}</label>
+                            <label class="required" for="email">{{ trans('cruds.user.fields.email') }}</label>
                             <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text"
                                    name="email" id="email" value="{{ old('email', auth()->user()->email) }}"
                                    required>
                             @if($errors->has('email'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('email') }}
+                                </div>
+                            @endif
+                        </div>
+						<div class="form-group">
+                            <label for="pec">{{ trans('cruds.user.fields.pec') }}</label>
+                            <input class="form-control {{ $errors->has('pec') ? 'is-invalid' : '' }}" type="text"
+                                   name="pec" id="pec" value="{{ old('pec', auth()->user()->pec) }}">
+                            @if($errors->has('pec'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('pec') }}
                                 </div>
                             @endif
                         </div>
@@ -147,8 +157,7 @@
                             <label for="phone_1">{{ trans('cruds.user.fields.phone_1') }}</label>
                             <input class="form-control {{ $errors->has('phone_1') ? 'is-invalid' : '' }}"
                                    type="text"
-                                   name="phone_1" id="phone_1" value="{{ old('phone_1', auth()->user()->phone_1) }}"
-                                   required>
+                                   name="phone_1" id="phone_1" value="{{ old('phone_1', auth()->user()->phone_1) }}">
                             @if($errors->has('phone_1'))
                                 <span class="text-danger">{{ $errors->first('phone_1') }}</span>
                             @endif

@@ -73,6 +73,7 @@ class User extends Authenticatable // implements MustVerifyEmail
 		'phone_3',
 		'fax',
 		'associate_due',
+		'pec',
     ];
 
     public function getIsAdminAttribute()
