@@ -79,4 +79,21 @@
             </div>
         </div>
     </div>
+	
+	<div class="row">
+        <div class="col-12">
+            <div class="card card-primary card-outline">
+			
+				<!-- Fonia -->
+                <div class="card-header d-flex p-0 border-none">
+                    <h3 class="card-title p-3">
+                        <strong>Andamento finanziario</strong>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+					<p><img src="{{env('APP_URL');}}/images/graf1.png" alt="Grafico 1" width="538" height="413" style="border:2px solid black"></p>
+					<p><img src="{{env('APP_URL');}}/images/graf2.png" alt="Grafico 2" width="538" height="413" style="border:2px solid black"></p>
+                </div>
+	</div>
 @endsection
