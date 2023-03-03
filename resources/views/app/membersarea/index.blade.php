@@ -70,8 +70,10 @@
 
                 <div class="card-body">
 					<p>
-						<a href="{{env('APP_URL');}}/docs/Statuto Club Astra.pdf" target="_blank">Statuto del Club</a><br>
+						<a href="{{env('APP_URL');}}/docs/Statuto Club Astra.pdf" target="_blank">Statuto del Club (vecchio)</a><br>
 						<a href="{{env('APP_URL');}}/docs/VERBALE CD DEL 14 GENN 23.pdf" target="_blank">Verbale CD del 14/01/2023</a><br>
+						<a href="{{env('APP_URL');}}/docs/VERBALE 18 FEBBRAIO 23.pdf" target="_blank">Verbale CD del 18/02/2023</a><br>
+						<a href="{{env('APP_URL');}}/docs/Statuto 2023 Aviosuperfice Club Astra ASD.pdf" target="_blank">Statuto del Club 2023</a><br>
 					</p>
                 </div>
             </div>
