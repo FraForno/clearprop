@@ -27,13 +27,29 @@
                     </h3>
                 </div>
 
+				<div class="card-body">
+					<p>
+						<strong>Server discord per lezioni online</strong><br />
+						<a href="https://discord.gg/2zrjTZcA" target="_blank">https://discord.gg/2zrjTZcA</a><br />
+					</p>
+                </div>
+				
+				<div class="card-body">
+					<p>
+						<strong>Slide lezioni</strong><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole dell'Aria.pdf" target="_blank">1 - Enti e Regole dell'Aria</a><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a>
+					</p>
+                </div>
+				
                 <div class="card-body">
 					<p>
-						<a href="{{env('APP_URL');}}/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a><br>
-						<a href="{{env('APP_URL');}}/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a><br>
-						<a href="{{env('APP_URL');}}/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a><br>
-						<a href="{{env('APP_URL');}}/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a><br>
-						<a href="{{env('APP_URL');}}/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br>
+						<strong>Quiz</strong><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br />
 						<a href="{{env('APP_URL');}}/quiz_fonia/ENG/index.html" target="_blank">Quiz Fonia Inglese</a>
 					</p>
                 </div>
@@ -70,10 +86,10 @@
 
                 <div class="card-body">
 					<p>
-						<a href="{{env('APP_URL');}}/docs/Statuto Club Astra.pdf" target="_blank">Statuto del Club (vecchio)</a><br>
-						<a href="{{env('APP_URL');}}/docs/VERBALE CD DEL 14 GENN 23.pdf" target="_blank">Verbale CD del 14/01/2023</a><br>
-						<a href="{{env('APP_URL');}}/docs/VERBALE 18 FEBBRAIO 23.pdf" target="_blank">Verbale CD del 18/02/2023</a><br>
-						<a href="{{env('APP_URL');}}/docs/Statuto 2023 Aviosuperfice Club Astra ASD.pdf" target="_blank">Statuto del Club 2023</a><br>
+						<a href="{{env('APP_URL');}}/docs/Statuto Club Astra.pdf" target="_blank">Statuto del Club (vecchio)</a><br />
+						<a href="{{env('APP_URL');}}/docs/VERBALE CD DEL 14 GENN 23.pdf" target="_blank">Verbale CD del 14/01/2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/VERBALE 18 FEBBRAIO 23.pdf" target="_blank">Verbale CD del 18/02/2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/Statuto 2023 Aviosuperfice Club Astra ASD.pdf" target="_blank">Statuto del Club 2023</a><br />
 					</p>
                 </div>
             </div>
