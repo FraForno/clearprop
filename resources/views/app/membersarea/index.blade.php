@@ -36,11 +36,20 @@
 				
 				<div class="card-body">
 					<p>
-						<strong>Slide lezioni</strong><br />
+						<strong>Lezioni</strong><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole dell'Aria.pdf" target="_blank">1 - Enti e Regole dell'Aria</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a>
+						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a><br />
+						<a href="javascript:openmodal();">3 - Gli Spazi Aerei</a>
 					</p>
                 </div>
+						
+				<!-- Modal Video Player -->
+				<div id="myModal" class="modal">
+				  <div class="modal-content">
+					<span class="close" onclick="closemodal();">&times;</span>
+					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;" src="{{env('APP_URL');}}/docs/fonia2023/Gli Spazi Aerei.mkv"></video>
+				  </div>
+				</div>
 				
                 <div class="card-body">
 					<p>
@@ -113,3 +122,16 @@
                 </div>
 	</div>
 @endsection
+
+<script>
+openmodal = function() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("video-player").play();
+}
+
+closemodal = function() {
+	document.getElementById("video-player").pause();
+	document.getElementById("video-player").currentTime=0;
+	document.getElementById("myModal").style.display = "none";
+}
+</script>

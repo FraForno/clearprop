@@ -5,6 +5,7 @@
 /public/astrawiki
 /public/quiz_fonia
 /public/storage
+/public/docs
 /storage/*.key
 /storage/tmp
 /vendor
