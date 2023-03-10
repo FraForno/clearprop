@@ -86,7 +86,7 @@ table.dataTable thead .sorting_desc {
   /*position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 50;
-  top: 0;
+  top: -50;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
