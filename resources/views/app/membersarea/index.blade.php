@@ -39,11 +39,14 @@
 						<strong>Slide Lezioni</strong><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole dell'Aria.pdf" target="_blank">1 - Enti e Regole dell'Aria</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/3_Spazi Aerei.pdf" target="_blank">3 - Gli Spazi Aerei</a><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.pdf" target="_blank">4 - I Servizi Meteo</a>
 					</p>
 					
 					<p>
 						<strong>Video Lezioni</strong><br />
-						<a href="javascript:openmodal();">3 - Gli Spazi Aerei</a>
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3_Gli Spazi Aerei.mkv');">3 - Gli Spazi Aerei</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.mkv');">4 - I Servizi Meteo</a>
 					</p>
                 </div>
 						
@@ -51,7 +54,7 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;" src="{{env('APP_URL');}}/docs/fonia2023/Gli Spazi Aerei.mkv"></video>
+					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;"></video>
 				  </div>
 				</div>
 				
@@ -128,8 +131,9 @@
 @endsection
 
 <script>
-openmodal = function() {
+openmodal = function(src) {
 	document.getElementById("myModal").style.display = "block";
+	document.getElementById("video-player").src=src;
 	document.getElementById("video-player").play();
 }
 
