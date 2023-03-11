@@ -36,9 +36,13 @@
 				
 				<div class="card-body">
 					<p>
-						<strong>Lezioni</strong><br />
+						<strong>Slide Lezioni</strong><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole dell'Aria.pdf" target="_blank">1 - Enti e Regole dell'Aria</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a><br />
+					</p>
+					
+					<p>
+						<strong>Video Lezioni</strong><br />
 						<a href="javascript:openmodal();">3 - Gli Spazi Aerei</a>
 					</p>
                 </div>
@@ -47,7 +51,7 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;" src="{{env('APP_URL');}}/docs/fonia2023/Gli Spazi Aerei.mkv"></video>
+					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;" src="{{env('APP_URL');}}/docs/fonia2023/Gli Spazi Aerei.mkv" width="100%" height="100%"></video>
 				  </div>
 				</div>
 				
