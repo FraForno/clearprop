@@ -51,7 +51,7 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;" src="{{env('APP_URL');}}/docs/fonia2023/Gli Spazi Aerei.mkv" width="100%" height="100%"></video>
+					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;" src="{{env('APP_URL');}}/docs/fonia2023/Gli Spazi Aerei.mkv"></video>
 				  </div>
 				</div>
 				
