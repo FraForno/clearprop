@@ -21,7 +21,7 @@ class MembersAreaController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('members_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('members_access') && Gate::denies('student_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         /*if ($request->ajax()) {
             $query = Activity::with(['user', 'type', 'copilot', 'instructor', 'plane'])

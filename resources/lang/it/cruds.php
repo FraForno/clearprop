@@ -84,7 +84,7 @@ return [
         ],
     ],
     'user' => [
-        'title' => 'Soci',
+        'title' => 'Anagrafica',
         'title_singular' => 'Socio',
         'fields' => [
             'id' => 'ID',

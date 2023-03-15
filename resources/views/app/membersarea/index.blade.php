@@ -9,18 +9,18 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{route('app.home')}}">Home</a></li>
-                <li class="breadcrumb-item active">Area Riservata Soci</li>
+                <li class="breadcrumb-item active">Area Riservata Soci ed Allievi</li>
             </ol>
         </div>
     </div>
 @endsection
 
 @section('content')
+	@canany(['members_access', 'student_access'])
+	<!-- Fonia -->
     <div class="row">
         <div class="col-12">
             <div class="card card-primary card-outline">
-			
-				<!-- Fonia -->
                 <div class="card-header d-flex p-0 border-none">
                     <h3 class="card-title p-3">
                         <strong>Corso di radiotelefonia aeronautica</strong>
@@ -29,7 +29,7 @@
 
 				<div class="card-body">
 					<p>
-						<strong>Server discord per lezioni online</strong><br />
+						<strong>Server discord</strong><br />
 						<a href="https://discord.gg/2zrjTZcA" target="_blank">https://discord.gg/2zrjTZcA</a><br />
 					</p>
                 </div>
@@ -73,7 +73,9 @@
 					</p>
                 </div>
 	</div>
+	@endcanany
 	
+	@can('members_access')
 	<div class="row">
 		<div class="col-12">
             <div class="card card-primary card-outline">
@@ -131,6 +133,7 @@
 					<p><img src="{{env('APP_URL');}}/images/graf2.png" alt="Grafico 2" width="538" height="413" style="border:2px solid black"></p>
                 </div>
 	</div>
+	@endcan
 @endsection
 
 <script>

@@ -43,7 +43,7 @@
                         </a>
                     </li>
                 @endcan
-				@can('members_access')
+				@canany(['members_access', 'student_access'])
 				<li class="nav-item">
                     <a href="{{ route("app.membersarea.index") }}" class="nav-link">
                         
@@ -55,7 +55,7 @@
                         </p>
                     </a>
                 </li>
-				@endcan
+				@endcanany
                 @can('activity_report_access')
                     <li class="nav-item">
                         <a href="{{ route("admin.activity-reports.index") }}"
