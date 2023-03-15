@@ -2,7 +2,7 @@
 @section('content-header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h2 class="m-0">Area Soci</h2>
+            <h2 class="m-0">Area Soci ed Allievi</h2>
 			<br/>
 			<p><em>Tutto il materiale è riservato ad uso esclusivo dei soci dell'Associazione Club Astra e ne è vietata la divulgazione senza autorizzazione</em></p>
         </div>
