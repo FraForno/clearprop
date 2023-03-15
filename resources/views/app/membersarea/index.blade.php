@@ -65,10 +65,10 @@
 						<a href="{{env('APP_URL');}}/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a><br />
 						<a href="{{env('APP_URL');}}/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a><br />
 						<a href="{{env('APP_URL');}}/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 1/index.html" target="_blank">Quiz Fonia Inglese Parte 1</a>
-						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 2/index.html" target="_blank">Quiz Fonia Inglese Parte 2</a>
-						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 3/index.html" target="_blank">Quiz Fonia Inglese Parte 3</a>
+						<a href="{{env('APP_URL');}}/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br /><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 1/index.html" target="_blank">Quiz Fonia Inglese Parte 1</a><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 2/index.html" target="_blank">Quiz Fonia Inglese Parte 2</a><br />
+						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 3/index.html" target="_blank">Quiz Fonia Inglese Parte 3</a><br />
 						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 4/index.html" target="_blank">Quiz Fonia Inglese Parte 4</a>
 					</p>
                 </div>
