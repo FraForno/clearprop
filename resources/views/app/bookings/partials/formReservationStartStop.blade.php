@@ -71,7 +71,6 @@
             //disabledTimeIntervals: [[moment({ h: 0 }), moment({ h: 6 })], [moment({ h: 20, m: 00 }), moment({ h: 24 })]],
             enabledHours: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
             stepping: 15,
-
         });
 
         $('#reservation_stop').datetimepicker({
@@ -105,14 +104,24 @@
             //disabledTimeIntervals: [[moment({ h: 0 }), moment({ h: 6 })], [moment({ h: 20, m: 00 }), moment({ h: 24 })]],
             enabledHours: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
             stepping: 15,
-
         });
 
         $("#reservation_start").on("dp.change", function (e) {
             $('#reservation_stop').data("DateTimePicker").minDate(e.date);
+			
+			var d = new Date(e.date);
+			d.setMinutes(d.getMinutes()+30);
+			year  = d.getFullYear();
+			month = (d.getMonth() + 1).toString().padStart(2, "0");
+			day   = d.getDate().toString().padStart(2, "0");
+			hours = (d.getHours() < 10 ? '0':'') + d.getHours();
+			minutes = (d.getMinutes() < 10 ? '0':'') + d.getMinutes();
+
+			document.getElementById('reservation_stop').value = day + "/" + month + "/" + year + " " + hours + ":" + minutes;
         });
         $("#reservation_stop").on("dp.change", function (e) {
             $('#reservation_start').data("DateTimePicker").maxDate(e.date);
         });
+		
     </script>
 @endsection

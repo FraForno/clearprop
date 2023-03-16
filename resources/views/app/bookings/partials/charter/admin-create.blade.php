@@ -17,7 +17,7 @@
                 <div
                     class="form-check  form-check-inline icheck-primary {{ $errors->has('status') ? 'is-invalid' : '' }}">
                     <input class="form-check-input" type="radio" id="status_{{ $key }}" name="status" value="{{ $key }}"
-                           required>
+                           <?php if($key == 1) { echo("checked"); } ?> required>
                     <label class="form-check-label" for="status_{{ $key }}">{{ $label }}</label>
                 </div>
             @endforeach

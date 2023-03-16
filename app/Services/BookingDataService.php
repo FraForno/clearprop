@@ -11,9 +11,21 @@ class BookingDataService
     {
         $collectionBookingEvents = [];
 
-        $bookingDates = Booking::with(['plane', 'bookingUsers', 'bookingInstructors', 'slot', 'mode'])
-            ->orderBy('reservation_start', 'asc')
-            ->get();
+		$bookingDates = Booking::with(['plane', 'bookingUsers', 'bookingInstructors', 'slot', 'mode'])
+				->orderBy('reservation_start', 'asc')
+				->get();
+		if( (auth()->user()->IsStudent) || 
+			(auth()->user()->IsMember)){
+				$bookingDates = $bookingDates->filter(function ($bookingDate) { 
+						foreach($bookingDate->bookingUsers as $curr_user)
+						{
+							if($curr_user->id == auth()->user()->id)
+								return true;
+						}
+						return false;
+				});
+			
+		}
 
         foreach ($bookingDates as $bookingDateItem) {
             switch ($bookingDateItem->mode_id) {
@@ -44,20 +56,34 @@ class BookingDataService
                 'description' => $bookingDateItem->description,
             ];
         }
-        //debug(json_encode($collectionBookingEvents));
+		
+		//debug(json_encode($collectionBookingEvents));
         return json_encode($collectionBookingEvents);
     }
 
     public
     function getBookingDataForCards()
     {
-        return Booking::with(['plane', 'bookingUsers', 'bookingInstructors', 'slot', 'mode'])
+        $bookingDates = Booking::with(['plane', 'bookingUsers', 'bookingInstructors', 'slot', 'mode'])
             ->where('reservation_stop', '>=', Carbon::parse(today()))
             ->orderBy('reservation_start', 'asc')
-            ->get()
-            ->groupBy(function ($booking) {
+            ->get();
+			
+		if( (auth()->user()->IsStudent) || 
+			(auth()->user()->IsMember)){
+			$bookingDates = $bookingDates->filter(function ($bookingDate) { 
+					foreach($bookingDate->bookingUsers as $curr_user)
+					{
+						if($curr_user->id == auth()->user()->id)
+							return true;
+					}
+					return false;
+			});
+		}
+			
+		return $bookingDates->groupBy(function ($booking) {
                 return Carbon::createFromFormat('d/m/Y H:i', $booking->reservation_start)->isoFormat('ddd DD MMM');
             });
+		
     }
-
 }
