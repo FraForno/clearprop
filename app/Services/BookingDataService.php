@@ -84,6 +84,5 @@ class BookingDataService
 		return $bookingDates->groupBy(function ($booking) {
                 return Carbon::createFromFormat('d/m/Y H:i', $booking->reservation_start)->isoFormat('ddd DD MMM');
             });
-		
     }
 }

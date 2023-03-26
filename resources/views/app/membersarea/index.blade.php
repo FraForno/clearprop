@@ -41,12 +41,16 @@
 						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/3_Spazi Aerei.pdf" target="_blank">3 - Gli Spazi Aerei</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.pdf" target="_blank">4 - I Servizi Meteo</a>
+						<a href="{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.pdf" target="_blank">5 - Conoscenze Radioelettriche</a>
+						<a href="{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.pdf" target="_blank">6 - Conoscenze Tecniche Specifiche</a>
 					</p>
 					
 					<p>
 						<strong>Video Lezioni</strong><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3_Gli Spazi Aerei.mkv');">3 - Gli Spazi Aerei</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.mkv');">4 - I Servizi Meteo</a>
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.mkv');">5 - Conoscenze Radioelettriche</a>
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.mkv');">6 - Conoscenze Tecniche Specifiche</a>
 					</p>
                 </div>
 						
