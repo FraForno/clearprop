@@ -42,7 +42,9 @@
 						<a href="{{env('APP_URL');}}/docs/fonia2023/3_Spazi Aerei.pdf" target="_blank">3 - Gli Spazi Aerei</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.pdf" target="_blank">4 - I Servizi Meteo</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.pdf" target="_blank">5 - Conoscenze Radioelettriche</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.pdf" target="_blank">6 - Conoscenze Tecniche Specifiche</a>
+						<a href="{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.pdf" target="_blank">6 - Conoscenze Tecniche Specifiche</a><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/7_Aerodromo.pdf" target="_blank">7 - Aerodromo</a><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.pdf" target="_blank">8 - Comunicazioni Radio</a>
 					</p>
 					
 					<p>
@@ -50,7 +52,9 @@
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3_Gli Spazi Aerei.mkv');">3 - Gli Spazi Aerei</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.mkv');">4 - I Servizi Meteo</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.mkv');">5 - Conoscenze Radioelettriche</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.mkv');">6 - Conoscenze Tecniche Specifiche</a>
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.mkv');">6 - Conoscenze Tecniche Specifiche</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/7_Aerodromo.mkv');">7 - Aerodromo</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.mkv');">8 - Comunicazioni Radio</a>
 					</p>
                 </div>
 						
