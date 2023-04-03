@@ -43,6 +43,7 @@ class User extends Authenticatable // implements MustVerifyEmail
         'privacy_confirmed_at',
 		'birthdate',
 		'associate_due',
+		'advanced_due',
     ];
 
     protected $fillable = [
@@ -75,6 +76,7 @@ class User extends Authenticatable // implements MustVerifyEmail
 		'fax',
 		'associate_due',
 		'pec',
+		'advanced_due',
     ];
 
     public function getIsAdminAttribute()
@@ -197,6 +199,16 @@ class User extends Authenticatable // implements MustVerifyEmail
     public function setAssociateDueAttribute($value)
     {
         $this->attributes['associate_due'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+    }
+	
+	public function getAdvancedDueAttribute($value)
+    {
+        return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
+    }
+
+    public function setAdvancedDueAttribute($value)
+    {
+        $this->attributes['advanced_due'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     public function getEmailVerifiedAtAttribute($value)

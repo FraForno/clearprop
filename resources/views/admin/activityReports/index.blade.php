@@ -56,6 +56,43 @@
 			<div class="card card-primary card-outline">
 				<div class="card-header d-flex p-0 border-none">
                     <h3 class="card-title p-3">
+                        <strong>Abilitazione VDS Avanzato</strong>
+                    </h3>
+                </div>
+
+                <div class="card-body">
+					<form method="POST" action="{{ route("admin.users.report3") }}" enctype="multipart/form-data">
+					@csrf
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                Genera report abilitazioni avanzato in scandenza
+								<br />
+								<br />
+								
+								<label class="control-label" for="fromSelectedDate">Scadenza avanzato dal:</label>
+								<input type="date" id="fromSelectedDate" name="fromSelectedDate" value="{{date('Y-m-d')}}" required />
+								
+								<br />
+								<br />
+                                
+								<label class="control-label" for="toSelectedDate">Scadenza avanzato al:</label>
+								<input type="date" id="toSelectedDate" name="toSelectedDate" value="{{date('Y-m-d')}}" required />
+                            </div>                            
+                        </div>
+						<div class="row">
+							<div class="col-6 text-left">
+								<br />
+                                <button class="btn btn-warning"
+                                        type="submit">Genera</button>
+                            </div>
+						</div>
+                    </form>
+                </div>
+            </div>
+			
+			<div class="card card-primary card-outline">
+				<div class="card-header d-flex p-0 border-none">
+                    <h3 class="card-title p-3">
                         <strong>Quote associative</strong>
                     </h3>
                 </div>

@@ -120,6 +120,8 @@ return [
             'medical_due_helper' => 'Data di scadenza della visita medica',
 			'associate_due' => 'Scadenza quota associativa',
             'associate_due_helper' => 'Data di scadenza della quota associativa',
+			'advanced_due' => 'Scadenza abilitazione avanzato',
+            'advanced_due_helper' => 'Data di scadenza dell\'abilitazione al vds avanzato',
             'license' => 'Numero attestato',
             'license_helper' => 'Numero dell\'attestato o della licenza di volo',
             'lang' => 'Lingua',

@@ -249,6 +249,16 @@
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.associate_due_helper') }}</span>
                         </div>
+						<div class="form-group">
+                            <label for="advanced_due">{{ trans('cruds.user.fields.advanced_due') }}</label>
+                            <input class="form-control date {{ $errors->has('advanced_due') ? 'is-invalid' : '' }}"
+                                   type="text"
+                                   name="advanced_due" id="advanced_due" value="{{ old('advanced_due', $user->advanced_due) }}">
+                            @if($errors->has('advanced_due'))
+                                <span class="text-danger">{{ $errors->first('advanced_due') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.advanced_due_helper') }}</span>
+                        </div>
                         <div class="form-group">
                             <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>
                             <div style="padding-bottom: 4px">

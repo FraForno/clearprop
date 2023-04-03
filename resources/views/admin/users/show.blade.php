@@ -189,6 +189,14 @@
                                         {{ $user->associate_due }}
                                     </td>
                                 </tr>
+								<tr>
+                                    <th>
+                                        {{ trans('cruds.user.fields.advanced_due') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->advanced_due }}
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>
                                         {{ trans('cruds.user.fields.roles') }}
