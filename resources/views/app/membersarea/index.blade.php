@@ -44,7 +44,8 @@
 						<a href="{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.pdf" target="_blank">5 - Conoscenze Radioelettriche</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.pdf" target="_blank">6 - Conoscenze Tecniche Specifiche</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/7_Aerodromo.pdf" target="_blank">7 - Aerodromo</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.pdf" target="_blank">8 - Comunicazioni Radio</a>
+						<a href="{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.pdf" target="_blank">8 - Comunicazioni Radio</a><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/10_Piano di Volo.pdf" target="_blank">10 - Piano di Volo</a>
 					</p>
 					
 					<p>
@@ -54,7 +55,9 @@
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.mkv');">5 - Conoscenze Radioelettriche</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.mkv');">6 - Conoscenze Tecniche Specifiche</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/7_Aerodromo.mkv');">7 - Aerodromo</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.mkv');">8 - Comunicazioni Radio</a>
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.mkv');">8 - Comunicazioni Radio</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/9_Comunicazioni Radio - Simulazione.mkv');">9 - Comunicazioni Radio - Simulazione</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/10_Piano di Volo.mkv');">10 - Piano di Volo</a>
 					</p>
                 </div>
 						
