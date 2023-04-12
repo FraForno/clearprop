@@ -66,7 +66,9 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls controlsList="nodownload" preload="none" oncontextmenu="return false;" playsinline></video>
+					<video id="video-player" controls controlsList="nodownload" preload="none" oncontextmenu="return false;" playsinline>
+						<source src="{{env('APP_URL');}}/docs/fonia2023/1_Enti_e_Regole Aria.mkv'" type="video/mp4">
+					</video>
 				  </div>
 				</div>
 				
