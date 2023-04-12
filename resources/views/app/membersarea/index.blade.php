@@ -66,7 +66,7 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls="true" controlsList="nodownload" preload="auto" oncontextmenu="return false;" playsinline></video>
+					<video id="video-player" controls controlsList="nodownload" oncontextmenu="return false;" playsinline></video>
 				  </div>
 				</div>
 				
