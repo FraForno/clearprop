@@ -51,14 +51,14 @@
 					<p>
 						<strong>Video Lezioni</strong><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/1 Enti E Regole Aria.mp4');">1 - Enti e Regole dell'Aria</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3_Gli Spazi Aerei.mkv');">3 - Gli Spazi Aerei</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.mkv');">4 - I Servizi Meteo</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.mkv');">5 - Conoscenze Radioelettriche</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.mkv');">6 - Conoscenze Tecniche Specifiche</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/7_Aerodromo.mkv');">7 - Aerodromo</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.mkv');">8 - Comunicazioni Radio</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/9_Comunicazioni Radio - Simulazione.mkv');">9 - Comunicazioni Radio - Simulazione</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/10_Piano di Volo.mkv');">10 - Piano di Volo</a>
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3 Gli Spazi Aerei.mp4');">3 - Gli Spazi Aerei</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4 Servizi Meteo.mp4');">4 - I Servizi Meteo</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5 Conoscenze Radioelettriche.mp4');">5 - Conoscenze Radioelettriche</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/6 Conoscenze Tecniche Specifiche.mp4');">6 - Conoscenze Tecniche Specifiche</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/7 Aerodromo.mp4');">7 - Aerodromo</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/8 Comunicazioni Radio.mp4');">8 - Comunicazioni Radio</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/9 Comunicazioni Radio - Simulazione.mp4');">9 - Comunicazioni Radio - Simulazione</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/10 Piano Di Volo.mp4');">10 - Piano di Volo</a>
 					</p>
                 </div>
 						
