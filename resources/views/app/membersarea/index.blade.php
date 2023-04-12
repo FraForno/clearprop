@@ -37,7 +37,7 @@
 				<div class="card-body">
 					<p>
 						<strong>Slide Lezioni</strong><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole dell'Aria.pdf" target="_blank">1 - Enti e Regole dell'Aria</a><br />
+						<a href="{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole Aria.pdf" target="_blank">1 - Enti e Regole dell'Aria</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/3_Spazi Aerei.pdf" target="_blank">3 - Gli Spazi Aerei</a><br />
 						<a href="{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.pdf" target="_blank">4 - I Servizi Meteo</a><br />
@@ -50,7 +50,7 @@
 					
 					<p>
 						<strong>Video Lezioni</strong><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole dell'Aria.mkv');">1 - Enti e Regole dell'Aria</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole Aria.mkv');">1 - Enti e Regole dell'Aria</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3_Gli Spazi Aerei.mkv');">3 - Gli Spazi Aerei</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.mkv');">4 - I Servizi Meteo</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.mkv');">5 - Conoscenze Radioelettriche</a><br />
