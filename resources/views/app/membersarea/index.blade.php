@@ -66,7 +66,7 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls playsinline></video>
+					<video id="video-player" controls="true" preload="none" playsinline></video>
 				  </div>
 				</div>
 				
@@ -153,7 +153,6 @@
 openmodal = function(src) {
 	document.getElementById("myModal").style.display = "block";
 	document.getElementById("video-player").src=src;
-	document.getElementById("video-player").load();
 	document.getElementById("video-player").play();
 }
 
