@@ -66,9 +66,7 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls controlsList="nodownload" preload="none" oncontextmenu="return false;" playsinline>
-						<source src="{{env('APP_URL');}}/docs/fonia2023/1_Enti_e_Regole Aria.mkv'" type="video/mp4">
-					</video>
+					<video id="video-player" controls controlsList="nodownload" preload="none" oncontextmenu="return false;" playsinline></video>
 				  </div>
 				</div>
 				
@@ -154,9 +152,9 @@
 <script>
 openmodal = function(src) {
 	document.getElementById("myModal").style.display = "block";
-	/*document.getElementById("video-player").src=src;
+	document.getElementById("video-player").src=src;
 	document.getElementById("video-player").load();
-	document.getElementById("video-player").play();*/
+	document.getElementById("video-player").play();
 }
 
 closemodal = function() {
