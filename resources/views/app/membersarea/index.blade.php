@@ -153,6 +153,7 @@
 openmodal = function(src) {
 	document.getElementById("myModal").style.display = "block";
 	document.getElementById("video-player").src=src;
+	document.getElementById("video-player").load();
 	document.getElementById("video-player").play();
 }
 
