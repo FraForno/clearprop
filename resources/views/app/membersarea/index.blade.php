@@ -50,6 +50,7 @@
 					
 					<p>
 						<strong>Video Lezioni</strong><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole dell'Aria.mkv');">1 - Enti e Regole dell'Aria</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3_Gli Spazi Aerei.mkv');">3 - Gli Spazi Aerei</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.mkv');">4 - I Servizi Meteo</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.mkv');">5 - Conoscenze Radioelettriche</a><br />
@@ -65,7 +66,7 @@
 				<div id="myModal" class="modal">
 				  <div class="modal-content">
 					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;"></video>
+					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;" playsinline></video>
 				  </div>
 				</div>
 				
