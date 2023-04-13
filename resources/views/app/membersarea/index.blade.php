@@ -51,6 +51,7 @@
 					<p>
 						<strong>Video Lezioni</strong><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/1 Enti E Regole Aria.mp4');">1 - Enti e Regole dell'Aria</a><br />
+						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/2 Servizi Info E Servizi Traffico Aereo.mp4');">2 - Servizi Info e Servizi Traffico Aereo</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3 Gli Spazi Aerei.mp4');">3 - Gli Spazi Aerei</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4 Servizi Meteo.mp4');">4 - I Servizi Meteo</a><br />
 						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5 Conoscenze Radioelettriche.mp4');">5 - Conoscenze Radioelettriche</a><br />
