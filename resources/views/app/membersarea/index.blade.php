@@ -90,12 +90,11 @@
 		</div>
 	</div>
 	@endcanany
-	
+	<!--
 	@can('members_access')
 	<div class="row">
 		<div class="col-12">
             <div class="card card-primary card-outline">
-				<!-- Wiki -->
 				<div class="card-header d-flex p-0 border-none">
                     <h3 class="card-title p-3">
                         <strong>AstraWiki</strong>
@@ -110,11 +109,10 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="row">
 		<div class="col-12">
             <div class="card card-primary card-outline">
-				<!-- Documenti -->
 				<div class="card-header d-flex p-0 border-none">
                     <h3 class="card-title p-3">
                         <strong>Documenti</strong>
@@ -133,7 +131,7 @@
             </div>
         </div>
     </div>
-	
+	-->
 	<!--<div class="row">
         <div class="col-12">
             <div class="card card-primary card-outline">
