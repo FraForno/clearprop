@@ -86,6 +86,8 @@
 						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 4/index.html" target="_blank">Quiz Fonia Inglese Parte 4</a>
 					</p>
                 </div>
+			</div>
+		</div>
 	</div>
 	@endcanany
 	
@@ -132,7 +134,7 @@
         </div>
     </div>
 	
-<!--	<div class="row">
+	<!--<div class="row">
         <div class="col-12">
             <div class="card card-primary card-outline">
 			
@@ -146,6 +148,8 @@
 					<p><img src="{{env('APP_URL');}}/images/graf1.png" alt="Grafico 1" width="538" height="413" style="border:2px solid black"></p>
 					<p><img src="{{env('APP_URL');}}/images/graf2.png" alt="Grafico 2" width="538" height="413" style="border:2px solid black"></p>
                 </div>
+			</div>
+		</div>
 	</div>-->
 	@endcan
 @endsection
