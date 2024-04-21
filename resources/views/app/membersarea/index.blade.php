@@ -42,7 +42,7 @@
 						<a href="{{env('APP_URL');}}/docs/verbale 16 12 2023.pdf" target="_blank">Verbale Assemblea Soci del 16/12/2023</a><br />
 						<a href="{{env('APP_URL');}}/docs/VERBALE ASSEMBLEA DEI SOCI DEL 20 APR 2024.pdf" target="_blank">Verbale Assemblea Soci del 20/04/2024</a><br />
 						<br />
-						<a href="{{env('APP_URL');}}/docs/" target="_blank">Conto Economico Consuntivo 2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/Consuntivo2023.pdf" target="_blank">Conto Economico Consuntivo 2023</a><br />
 					</p>
                 </div>
             </div>
