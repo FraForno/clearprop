@@ -19,98 +19,10 @@
 @section('content')
 	@canany(['members_access', 'student_access'])
 	<!-- Fonia -->
-    <div class="row">
-        <div class="col-12">
-            <div class="card card-primary card-outline">
-                <div class="card-header d-flex p-0 border-none">
-                    <h3 class="card-title p-3">
-                        <strong>Corso di radiotelefonia aeronautica</strong>
-                    </h3>
-                </div>
-
-				<div class="card-body">
-					<p>
-						<strong>Server discord</strong><br />
-						<a href="https://discord.gg/2zrjTZcA" target="_blank">https://discord.gg/2zrjTZcA</a><br />
-					</p>
-                </div>
-				
-				<div class="card-body">
-					<p>
-						<strong>Slide Lezioni</strong><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/1_Enti e Regole Aria.pdf" target="_blank">1 - Enti e Regole dell'Aria</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/2_Servizi Info e Servizi Traffico Aereo.pdf" target="_blank">2 - Servizi Info e Servizi Traffico Aereo</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/3_Spazi Aerei.pdf" target="_blank">3 - Gli Spazi Aerei</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/4_Servizi Meteo.pdf" target="_blank">4 - I Servizi Meteo</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/5_Conoscenze Radioelettriche.pdf" target="_blank">5 - Conoscenze Radioelettriche</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/6_Conoscenze Tecniche Specifiche.pdf" target="_blank">6 - Conoscenze Tecniche Specifiche</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/7_Aerodromo.pdf" target="_blank">7 - Aerodromo</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/8_Comunicazioni Radio.pdf" target="_blank">8 - Comunicazioni Radio</a><br />
-						<a href="{{env('APP_URL');}}/docs/fonia2023/10_Piano di Volo.pdf" target="_blank">10 - Piano di Volo</a>
-					</p>
-					
-					<p>
-						<strong>Video Lezioni</strong><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/1 Enti E Regole Aria.mp4');">1 - Enti e Regole dell'Aria</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/2 Servizi Info E Servizi Traffico Aereo.mp4');">2 - Servizi Info e Servizi Traffico Aereo</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/3 Gli Spazi Aerei.mp4');">3 - Gli Spazi Aerei</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/4 Servizi Meteo.mp4');">4 - I Servizi Meteo</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/5 Conoscenze Radioelettriche.mp4');">5 - Conoscenze Radioelettriche</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/6 Conoscenze Tecniche Specifiche.mp4');">6 - Conoscenze Tecniche Specifiche</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/7 Aerodromo.mp4');">7 - Aerodromo</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/8 Comunicazioni Radio.mp4');">8 - Comunicazioni Radio</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/9 Comunicazioni Radio - Simulazione.mp4');">9 - Comunicazioni Radio - Simulazione</a><br />
-						<a href="javascript:openmodal('{{env('APP_URL');}}/docs/fonia2023/10 Piano Di Volo.mp4');">10 - Piano di Volo</a>
-					</p>
-                </div>
-						
-				<!-- Modal Video Player -->
-				<div id="myModal" class="modal">
-				  <div class="modal-content">
-					<span class="close" onclick="closemodal();">&times;</span>
-					<video id="video-player" controls controlsList="nodownload" preload="auto" oncontextmenu="return false;"></video>
-				  </div>
-				</div>
-				
-                <div class="card-body">
-					<p>
-						<strong>Quiz</strong><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/1/index.html" target="_blank">Quiz Fonia Parte 1</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/2/index.html" target="_blank">Quiz Fonia Parte 2</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/3/index.html" target="_blank">Quiz Fonia Parte 3</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/4/index.html" target="_blank">Quiz Fonia Parte 4</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/5/index.html" target="_blank">Quiz Fonia Parte 5</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/6/index.html" target="_blank">Quiz Fonia Parte 6</a><br /><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 1/index.html" target="_blank">Quiz Fonia Inglese Parte 1</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 2/index.html" target="_blank">Quiz Fonia Inglese Parte 2</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 3/index.html" target="_blank">Quiz Fonia Inglese Parte 3</a><br />
-						<a href="{{env('APP_URL');}}/quiz_fonia/Parte Inglese 4/index.html" target="_blank">Quiz Fonia Inglese Parte 4</a>
-					</p>
-                </div>
-			</div>
-		</div>
-	</div>
+    
 	@endcanany
 	
 	@can('members_access')
-	<div class="row">
-		<div class="col-12">
-            <div class="card card-primary card-outline">
-				<div class="card-header d-flex p-0 border-none">
-                    <h3 class="card-title p-3">
-                        <strong>AstraWiki</strong>
-                    </h3>
-                </div>
-
-                <div class="card-body">
-					<p>
-						<a href="{{env('APP_URL');}}/astrawiki" target="_blank">Accedi</a> alla Wiki della teoria del volo!
-					</p>
-                </div>
-			</div>
-		</div>
-	</div>
-
 	<div class="row">
 		<div class="col-12">
             <div class="card card-primary card-outline">
@@ -122,35 +34,20 @@
 
                 <div class="card-body">
 					<p>
-						<a href="{{env('APP_URL');}}/docs/Statuto Club Astra.pdf" target="_blank">Statuto del Club (vecchio)</a><br />
-						<a href="{{env('APP_URL');}}/docs/Statuto 2023 Aviosuperfice Club Astra ASD.pdf" target="_blank">Statuto del Club 2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/Statuto 2024 finale.pdf" target="_blank">Statuto del Club</a><br />
 						<br />
-						<a href="{{env('APP_URL');}}/docs/VERBALE CD DEL 14 GENN 23.pdf" target="_blank">Verbale CD del 14/01/2023</a><br />
-						<a href="{{env('APP_URL');}}/docs/VERBALE 18 FEBBRAIO 23.pdf" target="_blank">Verbale CD del 18/02/2023</a><br />
-						<a href="{{env('APP_URL');}}/docs/verbale 13.05.23" target="_blank">Verbale CD del 13/05/2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/VERBALE 04 12 22.pdf" target="_blank">Verbale Assemblea Soci del 04/12/2022</a><br />
+						<a href="{{env('APP_URL');}}/docs/verbale CD 14 01 23.pdf" target="_blank">Verbale CD del 14/01/2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/verbale del 18 02 2023.pdf" target="_blank">Verbale Assemblea Soci del 18/02/2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/verbale 16 12 2023.pdf" target="_blank">Verbale Assemblea Soci del 16/12/2023</a><br />
+						<a href="{{env('APP_URL');}}/docs/VERBALE ASSEMBLEA DEI SOCI DEL 20 APR 2024.pdf" target="_blank">Verbale Assemblea Soci del 20/04/2024</a><br />
+						<br />
+						<a href="{{env('APP_URL');}}/docs/" target="_blank">Conto Economico Consuntivo 2023</a><br />
 					</p>
                 </div>
             </div>
         </div>
     </div>
-	
-	<!--<div class="row">
-        <div class="col-12">
-            <div class="card card-primary card-outline">
-			
-                <div class="card-header d-flex p-0 border-none">
-                    <h3 class="card-title p-3">
-                        <strong>Andamento finanziario</strong>
-                    </h3>
-                </div>
-
-                <div class="card-body">
-					<p><img src="{{env('APP_URL');}}/images/graf1.png" alt="Grafico 1" width="538" height="413" style="border:2px solid black"></p>
-					<p><img src="{{env('APP_URL');}}/images/graf2.png" alt="Grafico 2" width="538" height="413" style="border:2px solid black"></p>
-                </div>
-			</div>
-		</div>
-	</div>-->
 	@endcan
 @endsection
 </div>
