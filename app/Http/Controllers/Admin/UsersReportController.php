@@ -156,6 +156,57 @@ class UsersReportController extends Controller
 		
 		return false;
     }
+	
+	public function index4(Request $request)
+    {
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+		
+		/*if ($request->input('toSelectedDate') && $request->input('fromSelectedDate')) {			*/
+			//$from = Carbon::createFromFormat('Y-m-d', date('Y-m-d'))->format('Y-m-d');
+			//$from = Carbon::createFromFormat('Y-m-d', $request->input('fromSelectedDate'))->format('Y-m-d');
+            //$to = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y-m-d');
+			$to_file = Carbon::now()->format('Y-m-d');
+			
+			$active_users = User::where([['associate_due', '>=', Carbon::now()],['assoc_type', '!=', 'Non Socio' ]])->orWhereIn('assoc_type', ["Benemerito","Fondatore","Onorario"])->orderBy('surname', 'asc')->get();
+			
+            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/Libro_Soci_".$to_file.".csv";
+			$csv = fopen($file, "w") or die("unable to open file");
+			
+			fwrite($csv, "COGNOME;NOME;DATA DI NASCITA;E-MAIL;PEC;TIPOLOGIA SOCIO;SCADENZA QUOTA ASSOCIATIVA\n");
+			foreach ($active_users as $user) {
+                try {
+					fwrite(	$csv, 
+							$user->surname.";".
+							$user->name.";".
+							$user->birthdate.";".
+							$user->email.";".
+							$user->pec.";".
+							$user->assoc_type.";".
+							$user->associate_due.
+							"\n");
+                } catch (Throwable $exception) {
+					report($exception);
+                    return false;
+                }
+            }			
+			fclose($csv);
+			//chmod($file), 0777);
+			//gc_collect_cycles();
+			
+			header('Content-Description: File Transfer');
+			header('Content-Disposition: attachment; filename='.basename($file));
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate');
+			header('Pragma: public');
+			header('Content-Length: ' . filesize($file));
+			header("Content-Type: text/plain");
+			readfile($file);
+			
+			exit();
+		/*}*/
+		
+		return false;
+    }
 
     public function individualReport($user)
     {

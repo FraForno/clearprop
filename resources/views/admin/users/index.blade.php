@@ -33,10 +33,10 @@
                             <a class="nav-link active show" href="#active_users" role="tab" aria-controls="active_users"
                                data-toggle="pill"
                                aria-selected="true">
-                                Attivi
+                                Anagrafica
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!--li class="nav-item">
                             <a class="nav-link" href="#deleted_users" role="tab" aria-controls="deleted_users"
                                data-toggle="pill" aria-selected="false">
                                 Disattivati
@@ -47,7 +47,7 @@
                                data-toggle="pill" aria-selected="false">
                                 Contatti
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
 
@@ -59,7 +59,7 @@
                                 <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-active_users">
                                     <thead>
                                     <tr>
-                                        <th>
+                                        <th class="text-center">
                                             <i class="fas fa-eye"></i>
                                         </th>
                                         <th>
@@ -75,10 +75,10 @@
                                             {{ trans('cruds.user.fields.email') }}
                                         </th>
                                         <th>
-                                            {{ trans('cruds.role.title_singular') }}
+                                            Scadenza Visita Medica
                                         </th>
-                                        <th>
-                                            {{ trans('cruds.user.fields.factor') }}
+										<th>
+                                            Scadenza Quota Associativa
                                         </th>
                                         <th data-priority="2">
                                             &nbsp;
@@ -88,12 +88,12 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane" role="tabpanel" id="deleted_users" aria-labelledby="deleted_users">
+                        <!--<div class="tab-pane" role="tabpanel" id="deleted_users" aria-labelledby="deleted_users">
                             @includeIf('admin.users.relationships.deletedUsers')
                         </div>
 						<div class="tab-pane" role="tabpanel" id="contact_users" aria-labelledby="contact_users">
                             @includeIf('admin.users.relationships.contactUsers')
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -113,8 +113,12 @@
                 processing: true,
                 serverSide: true,
                 retrieve: true,
+				showCheckboxColumn: false,
                 aaSorting: [],
                 ajax: "{{ route('admin.users.index') }}",
+				select: {
+					style: 'api',
+				},
                 responsive: {
                     details: {
                         renderer: function (api, rowIdx, columns) {
@@ -135,7 +139,7 @@
                 },
                 columns: [
                     {
-                        "orderable": false,
+                        'orderable': true,
                         'searchable': false,
                         "data": null,
                         "defaultContent": '',
@@ -144,8 +148,8 @@
 					{data: 'surname', name: 'surname'},
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
-                    {data: 'roles', name: 'roles'},
-                    {data: 'factor_name', name: 'factor.name'},
+                    {data: 'medical_due', name: 'medical_due'},
+					{data: 'associate_due', name: 'associate_due'},
                     {data: 'actions', name: '{{ trans('global.actions') }}'}
                 ],
                 order: [[2, 'asc']],

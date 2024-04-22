@@ -53,6 +53,24 @@
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.birthdate_helper') }}</span>
                         </div>
+						<div class="form-group">
+                            <label class="required">Tipologia Socio</label>
+                            <select class="form-control {{ $errors->has('assoc_type') ? 'is-invalid' : '' }}"
+                                    name="assoc_type"
+                                    id="assoc_type" required>
+                                    <option value="Fondatore" {{ old('assoc_type') == "Fondatore" ? 'selected' : '' }}>Fondatore</option>
+									<option value="Onorario" {{ old('assoc_type') == "Onorario" ? 'selected' : '' }}>Onorario</option>
+									<option value="Benemerito" {{ old('assoc_type') == "Benemerito" ? 'selected' : '' }}>Benemerito</option>
+									<option value="Pilota" {{ (old('assoc_type') ? old('assoc_type') : "Pilota") == "Pilota" ? 'selected' : '' }}>Pilota</option>
+									<option value="Ordinario" {{ old('assoc_type') == "Ordinario" ? 'selected' : '' }}>Ordinario</option>
+									<option value="Aggregato" {{ old('assoc_type') == "Aggregato" ? 'selected' : '' }}>Aggregato</option>
+									<option value="Non Socio" {{ old('assoc_type') == "Non Socio" ? 'selected' : '' }}>Non Socio</option>
+                            </select>
+                            @if($errors->has('assoc_type'))
+                                <span class="text-danger">{{ $errors->first('assoc_type') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small"></span>
+                        </div>
                         <div class="form-group">
                             <label class="required" for="email">{{ trans('cruds.user.fields.email') }}</label>
                             <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
@@ -62,6 +80,16 @@
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                             @endif
                             <span class="help-block text-secondary small">{{ trans('cruds.user.fields.email_helper') }}</span>
+                        </div>
+						<div class="form-group">
+                            <label for="pec">{{ trans('cruds.user.fields.pec') }}</label>
+                            <input class="form-control {{ $errors->has('pec') ? 'is-invalid' : '' }}" type="pec"
+                                   name="pec"
+                                   id="pec" value="{{ old('pec') }}" required>
+                            @if($errors->has('pec'))
+                                <span class="text-danger">{{ $errors->first('pec') }}</span>
+                            @endif
+                            <span class="help-block text-secondary small">{{ trans('cruds.user.fields.pec_helper') }}</span>
                         </div>
                         <div class="form-group">
                             <label class="required" for="password">{{ trans('cruds.user.fields.password') }}</label>

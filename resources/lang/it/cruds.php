@@ -85,7 +85,8 @@ return [
     ],
     'user' => [
         'title' => 'Anagrafica',
-        'title_singular' => 'Socio',
+        'title_singular' => 'Utente',
+		'title_type' => 'Tipologia Socio',
         'fields' => [
             'id' => 'ID',
             'id_helper' => '',

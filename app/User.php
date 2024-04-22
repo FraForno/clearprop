@@ -29,6 +29,7 @@ class User extends Authenticatable // implements MustVerifyEmail
         'it' => 'Italiano',
     ];
     public $table = 'users';
+	
     protected $hidden = [
         'password',
         'remember_token',
@@ -77,16 +78,25 @@ class User extends Authenticatable // implements MustVerifyEmail
 		'associate_due',
 		'pec',
 		'advanced_due',
+		'assoc_type',
     ];
-
-    public function getIsAdminAttribute()
-    {
-        return $this->roles()->where('id', 1)->exists();
-    }
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+		$user_roles = $this->belongsToMany(Role::class);
+		
+		if($user_roles->where('id', 1)->exists() || $user_roles->where('id', 4)->exists())
+			return $user_roles;
+		
+		if(strtotime($this->associate_due) <= strtotime(Carbon::now()))
+			return $this->belongsToMany(Role::class)->where('role_id', '-999'); //set impossibile condition to return empty relationship
+		
+        return $user_roles;
+    }
+	
+	public function getIsAdminAttribute()
+    {
+        return $this->roles()->where('id', 1)->exists();
     }
 	
 	public function getIsMemberAttribute()
