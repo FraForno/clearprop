@@ -85,11 +85,11 @@ class User extends Authenticatable // implements MustVerifyEmail
     {
 		$user_roles = $this->belongsToMany(Role::class);
 		
-		if($user_roles->where('id', 1)->exists() || $user_roles->where('id', 4)->exists())
+		/*if($user_roles->where('id', 1)->exists() || $user_roles->where('id', 4)->exists())
 			return $user_roles;
 		
 		if(strtotime($this->associate_due) <= strtotime(Carbon::now()))
-			return $this->belongsToMany(Role::class)->where('role_id', '-999'); //set impossibile condition to return empty relationship
+			return $this->belongsToMany(Role::class)->where('role_id', '-999'); //set impossibile condition to return empty relationship*/
 		
         return $user_roles;
     }
