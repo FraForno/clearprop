@@ -16,12 +16,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Auth;
 
 class MembersAreaController extends Controller
 {
     public function index(Request $request)
     {
         abort_if(Gate::denies('members_access') && Gate::denies('student_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+		
+		abort_if(!Auth::user()->IsValidAssociate, Response::HTTP_FORBIDDEN, '403 Forbidden');		
 
         /*if ($request->ajax()) {
             $query = Activity::with(['user', 'type', 'copilot', 'instructor', 'plane'])

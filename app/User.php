@@ -117,7 +117,7 @@ class User extends Authenticatable // implements MustVerifyEmail
         return $this->roles()->where('id', 5)->exists();
     }
 	
-	public function getIsValidAssociate()
+	public function getIsValidAssociateAttribute()
     {
 		if($this->roles()->where('id', 1)->exists() || $this->roles()->where('id', 3)->exists() || $this->roles()->where('id', 4)->exists())
 			return 1;
