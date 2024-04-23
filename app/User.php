@@ -21,8 +21,6 @@ class User extends Authenticatable // implements MustVerifyEmail
     const IS_MANAGER = 3;
     const IS_INSTRUCTOR = 4;
     const IS_MECHANIC = 5;
-	const IS_CONTACT = 6;
-	const IS_STUDENT = 7;
     const LANG_SELECT = [
         'en' => 'English',
       //  'DE' => 'German',
@@ -119,19 +117,18 @@ class User extends Authenticatable // implements MustVerifyEmail
         return $this->roles()->where('id', 5)->exists();
     }
 	
-	public function getIsContactAttribute()
+	public function getIsValidAssociate()
     {
-        return $this->roles()->where('id', 6)->exists();
-    }
-	
-	public function getIsStudentAttribute()
-    {
-        return $this->roles()->where('id', 7)->exists();
-    }
-	
-	public function getIsContactOnlyAttribute()
-    {
-        return ($this->roles()->where('id', 6)->exists() && $this->roles()->where('id', '!=', 6)->doesntExist());
+		if($this->roles()->where('id', 1)->exists() || $this->roles()->where('id', 3)->exists() || $this->roles()->where('id', 4)->exists())
+			return 1;
+		
+		if($this->assoc_type == 'Fondatore' || $this->assoc_type == 'Benemerito')
+			return 1;
+
+		if(Carbon::now()->gt(Carbon::createFromFormat('d/m/Y', $this->associate_due)))
+			return 0;
+		else
+			return 1;
     }
 
     public function userActivities()

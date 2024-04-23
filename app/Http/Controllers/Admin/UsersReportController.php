@@ -23,17 +23,17 @@ class UsersReportController extends Controller
             $to = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y-m-d');
 			$to_file = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y_m_d');
 			
-			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->orderBy('medical_due', 'asc')->get();
+			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->orderBy('medical_due', 'asc')->orderBy('surname', 'asc')->get();
 			
             $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_medico_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
-			fwrite($csv, "NOME;COGNOME;E-MAIL;SCADENZA CERTIFICATO MEDICO\n");
+			fwrite($csv, "COGNOME;NOME;E-MAIL;SCADENZA CERTIFICATO MEDICO\n");
 			foreach ($usersWithMedicalDue as $user) {
                 try {
 					fwrite(	$csv, 
-							$user->name.";".
 							$user->surname.";".
+							$user->name.";".
 							$user->email.";".
 							$user->medical_due.
 							"\n");
@@ -71,17 +71,17 @@ class UsersReportController extends Controller
             $to = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y-m-d');
 			$to_file = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y_m_d');
 			
-			$usersWithAssocDue = User::whereBetween('associate_due', [$from, $to])->orderBy('associate_due', 'asc')->get();
+			$usersWithAssocDue = User::whereBetween('associate_due', [$from, $to])->orderBy('associate_due', 'asc')->orderBy('surname', 'asc')->get();
 			
             $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_quota_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
-			fwrite($csv, "NOME;COGNOME;E-MAIL;SCADENZA QUOTA ASSOCIATIVA\n");
+			fwrite($csv, "COGNOME;NOME;E-MAIL;SCADENZA QUOTA ASSOCIATIVA\n");
 			foreach ($usersWithAssocDue as $user) {
                 try {
 					fwrite(	$csv, 
-							$user->name.";".
 							$user->surname.";".
+							$user->name.";".
 							$user->email.";".
 							$user->associate_due.
 							"\n");
@@ -119,17 +119,17 @@ class UsersReportController extends Controller
             $to = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y-m-d');
 			$to_file = Carbon::createFromFormat('Y-m-d', $request->input('toSelectedDate'))->format('Y_m_d');
 			
-			$usersWithMedicalDue = User::whereBetween('advanced_due', [$from, $to])->orderBy('advanced_due', 'asc')->get();
+			$usersWithMedicalDue = User::whereBetween('advanced_due', [$from, $to])->orderBy('advanced_due', 'asc')->orderBy('surname', 'asc')->get();
 			
             $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_avanzato_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
-			fwrite($csv, "NOME;COGNOME;E-MAIL;SCADENZA ABILITAZIONE AVANZATO\n");
+			fwrite($csv, "COGNOME;NOME;E-MAIL;SCADENZA ABILITAZIONE AVANZATO\n");
 			foreach ($usersWithMedicalDue as $user) {
                 try {
 					fwrite(	$csv, 
-							$user->name.";".
 							$user->surname.";".
+							$user->name.";".
 							$user->email.";".
 							$user->advanced_due.
 							"\n");

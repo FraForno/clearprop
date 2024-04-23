@@ -38,12 +38,12 @@ class HomeController extends Controller
             }
         }
 		
-		$userIsContactOnly = Auth::user()->IsContactOnly;
-
+		//$userIsNotAuthorized = !Auth::user()->IsValidAssociate;
+		
         $bookingDates = (new BookingDataService())->getBookingDataForCards();
         $bookingCalendarEvents = (new BookingDataService())->getBookingDataForCalendar();
 
-        return view('home', compact('bookingDates', 'bookingCalendarEvents', 'collectionActivityStatistics', 'currentUserMedicalBeyondDueDate', 'userIsContactOnly'));
+        return view('home', compact('bookingDates', 'bookingCalendarEvents', 'collectionActivityStatistics', 'currentUserMedicalBeyondDueDate'/*, 'userIsNotAuthorized'*/));
     }
 
 }
