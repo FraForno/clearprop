@@ -4,7 +4,7 @@ return [
     'dashboard' => [
         'greeting' => 'Ciao ',
 		'unauthorized' => 'Accesso non autorizzato',
-        'title' => 'Dashboard',
+        'title' => 'Prenotazioni',
         'statistics' => [
             'global' => 'Tutto il Club',
             'instructor' => 'Come Instruttore',

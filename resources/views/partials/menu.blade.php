@@ -22,8 +22,7 @@
                 <li class="nav-item">
                     <a href="{{ route("app.home") }}" class="nav-link">
                         
-                         <i class="fa-fw nav-icon fas fa-tachometer-alt">
-
+                         <i class="fa-fw nav-icon fas fa-calendar-alt">
                          </i>
                          <p>   
 							<span>{{ trans('global.dashboard') }}</span>

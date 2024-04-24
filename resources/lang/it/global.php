@@ -9,7 +9,7 @@ return [
     'areYouSure' => 'Sei sicuro?',
     'clickHereToVerify' => 'Clicca per verificare',
     'create' => 'Crea',
-    'dashboard' => 'Dashboard',
+    'dashboard' => 'Prenotazioni',
 	'membersarea' => 'Area riservata',
     'delete' => 'Elimina',
     'downloadFile' => 'Scarica file',
