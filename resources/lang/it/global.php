@@ -5,7 +5,7 @@ return [
 	'bornon' => 'il',
     'actions' => 'Azioni',
     'add' => 'Aggiungi',
-    'allRightsReserved' => 'Tutti i diritti riservati.',
+    'allRightsReserved' => ' ClearProp ASTRA - basato su ClearProp con licenza MIT',
     'areYouSure' => 'Sei sicuro?',
     'clickHereToVerify' => 'Clicca per verificare',
     'create' => 'Crea',
