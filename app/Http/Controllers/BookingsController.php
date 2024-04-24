@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyBookingRequest;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
+use App\Http\Resources\Admin\BookingResource;
 use App\Mode;
 use App\Services\BookingNotificationService;
 use App\Services\BookingCheckService;
@@ -267,4 +268,32 @@ class BookingsController extends Controller
         return redirect()->route('app.home');
 
     }
+	
+	public function getOverlappingBookings(Request $request)
+    {
+		$res_start = Carbon::createFromFormat('d/m/Y H:i', $request->start);
+		$res_stop = Carbon::createFromFormat('d/m/Y H:i', $request->stop);
+		
+		$overlap = Booking::whereBetween('reservation_start', [$res_start, $res_stop->subMinutes(1)])->join('users', 'users.id', '=', 'bookings.created_by_id')->select('surname_name', 'reservation_start', 'reservation_stop')->take(1)->get();
+		
+		$overlap2 = Booking::whereBetween('reservation_stop', [$res_start->addMinutes(1), $res_stop])->join('users', 'users.id', '=', 'bookings.created_by_id')->select('surname_name', 'reservation_start', 'reservation_stop')->take(1)->get();
+		
+		if($overlap->isEmpty() && $overlap2->isEmpty()) {
+			return null;
+		}
+		else if(!$overlap->isEmpty()) {
+			return response()->json([
+				'name' => $overlap[0]["surname_name"],
+				'start' => $overlap[0]->reservation_start,
+				'stop' => $overlap[0]->reservation_stop,
+			]);
+		}
+		else {		
+			return response()->json([
+				'name' => $overlap2[0]["surname_name"],
+				'start' => $overlap2[0]->reservation_start,
+				'stop' => $overlap2[0]->reservation_stop,
+			]);
+		}
+	}
 }

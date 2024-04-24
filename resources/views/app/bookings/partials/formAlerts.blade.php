@@ -3,6 +3,10 @@
         <h5><i class="icon fas fa-info"></i>{{ trans('global.caution') }}</h5>
         {!! trans('global.medicalCheck') !!}
     </div>
+	<div class="alert alert-warning alert-dismissible" id="warning-overlap" style="display: none">
+        <h5><i class="icon fas fa-info"></i>{{ trans('global.caution') }}</h5>
+        {!! trans('global.overlapCheck') !!}
+    </div>
     <div class="alert alert-warning alert-dismissible" id="warning-activity" style="display: none">
         <h5><i class="icon fas fa-info"></i>{{ trans('global.caution') }}</h5>
         {!! trans('global.activityCheck') !!}

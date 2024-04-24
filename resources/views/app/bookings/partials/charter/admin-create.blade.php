@@ -51,8 +51,11 @@
             let plane;
             let warning_medical = $("#warning-medical");
             let warning_activity = $("#warning-activity");
+			let warning_overlap = $("#warning-overlap");
             let info_balance = $("#info-balance");
             let info_rating = $("#info-rating");
+			let start;
+			let stop;
 
             $("#plane_id").change(function () {
                 plane = $(this).val();
@@ -63,6 +66,35 @@
                         method: 'GET',
                         success: function (data) {
                             formChecks(data);
+                        }
+                    });
+                }
+            });
+
+			$('#reservation_start').on('dp.change', function() {
+				start = $(this).val();
+				stop = $('#reservation_stop').val();
+				
+                if (start && stop) {
+                    $.ajax({
+                        url: "{{ route('app.bookings.getOverlappingBookings') }}?start=" + start + "&stop=" + stop,
+                        method: 'GET',
+                        success: function (data) {
+                            formChecks2(data);
+                        }
+                    });
+                }
+            });
+			
+			$('#reservation_stop').on('dp.change', function() {
+				start = $('#reservation_start').val();
+				stop = $(this).val();
+                if (start && stop) {
+                    $.ajax({
+                        url: "{{ route('app.bookings.getOverlappingBookings') }}?start=" + start + "&stop=" + stop,
+                        method: 'GET',
+                        success: function (data) {
+                            formChecks2(data);
                         }
                     });
                 }
@@ -89,6 +121,15 @@
                 if (data.balanceCheckPassed === false) {
                     //info_balance.show();
                 }
+            }
+			
+			function formChecks2(data) {
+				
+				warning_overlap.hide();
+				if(data) {
+                    warning_overlap.show();
+					document.getElementById("overlapDetails").innerHTML = "Prenotazione creata da " + data.name + " avente inizio il " + data.start + " e fine il " + data.stop;
+                }   
             }
         });
     </script>

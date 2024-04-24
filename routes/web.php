@@ -29,6 +29,7 @@ Route::group(['prefix' => 'app', 'as' => 'app.', 'middleware' => ['auth']], func
 	Route::resource('membersarea', MembersAreaController::class);
 
     // Bookings
+	Route::get('bookings/getOverlappingBookings', [BookingsController::class, 'getOverlappingBookings'])->name('bookings.getOverlappingBookings');
     Route::post('bookings/book/{id}', [BookingsController::class, 'book'])->name('bookings.book');
     Route::post('bookings/revoke/{id}', [BookingsController::class, 'revoke'])->name('bookings.revoke');
     Route::delete('bookings/destroy', [BookingsController::class, 'massDestroy'])->name('bookings.massDestroy');
@@ -36,7 +37,6 @@ Route::group(['prefix' => 'app', 'as' => 'app.', 'middleware' => ['auth']], func
 
     // Ratings
     Route::get('ratings/getRatingsForUser', [RatingsController::class, 'getRatingsForUser'])->name('ratings.getRatingsForUser');
-
 });
 
 // Change profile

@@ -74,7 +74,7 @@
         });
 
         $('#reservation_stop').datetimepicker({
-            useCurrent: false,
+			useCurrent: false,
             focusOnShow: false,
             format: 'DD/MM/YYYY HH:mm',
             locale: '{{ app()->getLocale() }}',

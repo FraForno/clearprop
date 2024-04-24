@@ -3,6 +3,11 @@
         <h5><i class="icon fas fa-info"></i>{{ trans('global.caution') }}</h5>
         {!! trans('global.medicalCheck_for_admin') !!}
     </div>
+	<div class="alert alert-warning alert-dismissible" id="warning-overlap" style="display: none">
+        <h5><i class="icon fas fa-info"></i>{{ trans('global.caution') }}</h5>
+        {!! trans('global.overlapCheck_for_admin') !!}
+		<div id="overlapDetails"></div>
+    </div>
     <div class="alert alert-warning alert-dismissible" id="warning-activity" style="display: none">
         <h5><i class="icon fas fa-info"></i>{{ trans('global.caution') }}</h5>
         {!! trans('global.activityCheck_for_admin') !!}
