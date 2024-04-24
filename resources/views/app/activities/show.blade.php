@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
-    <div class="card">
+   <div class="card">
         <div class="card-header">
             {{ trans('global.show') }} {{ trans('cruds.activity.title') }}
         </div>
@@ -80,6 +80,14 @@
                             {{ $activity->event }}
                         </td>
                     </tr>
+					<tr>
+                        <th>
+                            {{ trans('cruds.activity.fields.paid') }}
+                        </th>
+                        <td>
+							<input type="checkbox" disabled="disabled" {{ $activity->paid ? 'checked' : '' }}>
+                        </td>
+                    </tr>
                     <tr hidden>
                         <th>
                             {{ trans('cruds.activity.fields.engine_warmup') }}
@@ -104,14 +112,14 @@
                             {{ $activity->counter_start }}
                         </td>
                     </tr>
-                    <!-- <tr>
+                    <tr hidden>
                         <th>
                             {{ trans('cruds.activity.fields.counter_stop') }}
                         </th>
                         <td>
                             {{ $activity->counter_stop }}
                         </td>
-                    </tr> -->
+                    </tr>
 					<tr>
                         <th>
                             {{ trans('cruds.activity.fields.counter_stop_hhmm') }}

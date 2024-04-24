@@ -79,6 +79,20 @@
                     @endif
                     <span class="help-block text-secondary small">{{ trans('cruds.activity.fields.event_helper') }}</span>
                 </div>
+				<div class="form-group">
+                    <div class="form-check {{ $errors->has('paid') ? 'is-invalid' : '' }}">
+                        <input type="hidden" name="paid" value="0">
+                        <input class="form-check-input" type="checkbox" name="paid" id="paid"
+                               value="1" {{ $activity->paid || old('paid', 0) === 1 ? 'checked' : '' }}>
+                        <label class="form-check-label"
+                               for="paid"><strong>{{ trans('cruds.activity.fields.paid') }}</strong></label>
+                    </div>
+                    @if($errors->has('paid'))
+                        <span class="text-danger">{{ $errors->first('paid') }}</span>
+                    @endif
+                    <span
+                            class="help-block text-secondary small">{{ trans('cruds.activity.fields.paid_helper') }}</span>
+                </div>
                 <div class="form-group" hidden>
                     <div class="form-check {{ $errors->has('engine_warmup') ? 'is-invalid' : '' }}">
                         <input type="hidden" name="engine_warmup" value="0">

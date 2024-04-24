@@ -130,6 +130,7 @@
                 processing: true,
                 serverSide: true,
                 retrieve: true,
+				showCheckboxColumn: false,
                 aaSorting: [],
                 ajax: "{{ route('app.activities.index') }}",
                 responsive: {
@@ -152,7 +153,7 @@
                 },
                 columns: [
                     {
-                        "orderable": false,
+                        "orderable": true,
                         'searchable': false,
                         "data": null,
                         "defaultContent": '',
