@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-    @if($currentUserMedicalBeyondDueDate)
+    <!--@if($currentUserMedicalBeyondDueDate)
         <div class="row">
             <div class="col-12">
                 <div class="alert alert-warning alert-dismissible">
@@ -26,8 +26,8 @@
                 </div>
             </div>
         </div>
-    @endif
-    <div class="row">
+    @endif-->
+<!--    <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex p-0 border-none">
@@ -43,7 +43,7 @@
                                         data-toggle="tab">{{$activityStatistics['name']}}</a></li>
                         @endforeach
                     </ul>
-                </div>
+                </div
                 <div class="card-body">
                     <div class="tab-content">
                         @foreach($collectionActivityStatistics as $activityStatistics)
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 	@can('booking_show')
     <div class="row">
         <div class="col-md-12">
