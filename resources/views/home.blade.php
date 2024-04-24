@@ -124,7 +124,7 @@
                                             </a>
                                         @endcan
                                     </div>
-                                    <div class="btn-group mr-1">
+                                    <!--<div class="btn-group mr-1">
                                         @can('booking_school_create')
                                             <a class="btn btn-secondary btn-block btn-flat"
                                                href="{{route('app.bookings.create', ['mode_id' => 2]) }}"><i
@@ -139,7 +139,7 @@
                                                         class="fa fa-plus"></i> {{ trans('cruds.dashboard.create_maintenance_booking') }}
                                             </a>
                                         @endcan
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                             <div class="row">
