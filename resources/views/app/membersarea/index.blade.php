@@ -44,7 +44,7 @@
 						<a href="{{env('APP_URL');}}/docs/VERBALE ASSEMBLEA DEI SOCI DEL 20 APR 2024.pdf" target="_blank">Verbale Assemblea Soci del 20/04/2024</a><br />
 						<a href="{{env('APP_URL');}}/docs/LibroSoci20Apr2024.pdf" target="_blank">Libro Soci approvato il 20/04/2024</a><br />
 						<a href="{{env('APP_URL');}}/docs/VERBALE CD DEL 21 NOVEMBRE 2024.pdf" target="_blank">Verbale CD del 21/11/2024</a><br />
-						<a href="{{env('APP_URL');}}/docs/LibroSoci24Nov2024.pdf" target="_blank">Libro Soci approvato il 21/11/2024</a><br />
+						<a href="{{env('APP_URL');}}/docs/LibroSoci21Nov2024.pdf" target="_blank">Libro Soci approvato il 21/11/2024</a><br />
 					</p>
                 </div>
             </div>
