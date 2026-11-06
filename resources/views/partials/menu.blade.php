@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
     <!-- Brand Logo -->
     <a href="{{route('app.home')}}" class="brand-link">
-      <span class="brand-text"><img src="{{ env('APP_URL').'/images/astralogo.png' }}" alt="Astra Logo" height="45px" style="opacity: .8"></span>
+      <span class="brand-text"><img src="/public/images/astralogo.png" alt="Astra Logo" height="45px" style="opacity: .8"></span>
       {{-- <span class="brand-text font-weight-light">{{ trans('panel.site_title') }}</span> --}}
     </a>
 
