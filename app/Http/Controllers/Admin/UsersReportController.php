@@ -25,7 +25,7 @@ class UsersReportController extends Controller
 			
 			$usersWithMedicalDue = User::whereBetween('medical_due', [$from, $to])->orderBy('medical_due', 'asc')->orderBy('surname', 'asc')->get();
 			
-            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_medico_".$to_file.".csv";
+            $file = base_path('tmp')."/report_scadenza_medico_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
 			fwrite($csv, "COGNOME;NOME;E-MAIL;SCADENZA CERTIFICATO MEDICO\n");
@@ -73,7 +73,7 @@ class UsersReportController extends Controller
 			
 			$usersWithAssocDue = User::whereBetween('associate_due', [$from, $to])->orderBy('associate_due', 'asc')->orderBy('surname', 'asc')->get();
 			
-            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_quota_".$to_file.".csv";
+            $file = base_path('tmp')."/report_scadenza_quota_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
 			fwrite($csv, "COGNOME;NOME;E-MAIL;SCADENZA QUOTA ASSOCIATIVA\n");
@@ -121,7 +121,7 @@ class UsersReportController extends Controller
 			
 			$usersWithMedicalDue = User::whereBetween('advanced_due', [$from, $to])->orderBy('advanced_due', 'asc')->orderBy('surname', 'asc')->get();
 			
-            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/report_scadenza_avanzato_".$to_file.".csv";
+            $file = base_path('tmp')."/report_scadenza_avanzato_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
 			fwrite($csv, "COGNOME;NOME;E-MAIL;SCADENZA ABILITAZIONE AVANZATO\n");
@@ -169,7 +169,7 @@ class UsersReportController extends Controller
 			
 			$active_users = User::where([['associate_due', '>=', Carbon::now()],['assoc_type', '!=', 'Non Socio' ]])->orWhereIn('assoc_type', ["Benemerito","Fondatore","Onorario"])->orderBy('surname', 'asc')->get();
 			
-            $file = $_SERVER["DOCUMENT_ROOT"].$_ENV['APP_ROOT']."../tmp/Libro_Soci_".$to_file.".csv";
+            $file = base_path('tmp')."/Libro_Soci_".$to_file.".csv";
 			$csv = fopen($file, "w") or die("unable to open file");
 			
 			fwrite($csv, "COGNOME;NOME;DATA DI NASCITA;E-MAIL;PEC;TIPOLOGIA SOCIO;SCADENZA QUOTA ASSOCIATIVA\n");
